@@ -15,7 +15,7 @@ Before changing repository structure, identify the source-of-truth docs and acti
 
 - Human clarifications: 0
 - Required docs found before edit: yes
-- Top-level navigation pack: 2 files, 39 lines, 294 words
+- Top-level navigation pack: 2 files, 55 lines, 294 words
 - Top-level map metrics: see `top-level-map-metrics.json`
 
 ## Result

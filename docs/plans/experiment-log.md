@@ -38,6 +38,30 @@ Use this file to record outcomes as the lab progresses.
 - Commands or workflow: followed `AGENTS.md`, read `README.md`, `docs/knowledge/harness-engineering-overview.md`, and `docs/plans/experiment-plan.md` before editing; then generated `artifacts/top-level-map-metrics.json` from the measurement script.
 - Result: pass. Required docs were found before any edits and no human clarification was needed.
 - What worked: the short map made the source-of-truth docs explicit, and the top-level context stayed small enough to scan quickly.
-- What failed: the oversized-manual comparison case has not been run yet, so the result is a baseline rather than a full A/B comparison.
-- What to change next: build Experiment 002 for the giant-manual comparison and reuse the same measurement format.
+- What failed: the baseline alone could not prove that the short map was better than a larger but complete alternative.
+- What to change next: extend the comparison into cleanup and stale-doc failure cases.
 - Reusable lesson for `ms_bci_laboratory`: keep the top-level agent map short, name the source-of-truth docs explicitly, and pair that with lightweight cleanup rules before the repo grows.
+
+### 2026-04-06 - Experiment 002: big manual comparison
+
+- Layer: A / B
+- Hypothesis: A giant single-manual instruction file can preserve required-path coverage but still reduce discoverability by increasing scan cost and burying the useful file references.
+- Setup: Reused the required paths from Experiment 001, created `experiments/002-big-manual-comparison/fixtures/MEGA-MANUAL.md` as the oversized-manual fixture, and compared it against the baseline pack with `experiments/002-big-manual-comparison/compare-navigation-packs.ps1`.
+- Commands or workflow: measured the baseline pack (`AGENTS.md` + `README.md`) and the fixture manual with the shared script `experiments/shared/measure-navigation-pack.ps1`, then wrote the comparison output to `artifacts/navigation-pack-comparison.json`.
+- Result: the comparison succeeded and the giant manual was functionally complete but structurally worse. Both packs covered all four required paths, but the giant manual expanded from 294 to 1036 words, pushed the first required path mention from line 12 to line 185, and dropped path-mention density from 2.72 to 0.48 per 100 words.
+- What worked: the shared measurement script made the A/B comparison repeatable and showed that coverage alone is not enough; placement and density also matter.
+- What failed: this is still a synthetic fixture, not a blinded multi-agent study, so the result is strong structural evidence rather than a broad behavioral benchmark.
+- What to change next: run the same comparison against stale-doc and duplicate-guidance variants, then turn the cleanup checklist into a repeatable garbage-collection pass.
+- Reusable lesson for `ms_bci_laboratory`: do not replace a short repo map with a single large manual. Keep top-level guidance short, link outward, and measure discoverability with concrete proxies instead of relying on completeness alone.
+
+### 2026-04-06 - Experiment 003: garbage collection pass
+
+- Layer: H
+- Hypothesis: A lightweight audit pass can reliably catch repo entropy such as stale planning state, missing bookkeeping, duplicate helpers, orphan artifacts, and placeholders, and a cleaned snapshot should reduce those findings to zero.
+- Setup: Created a dirty fixture and a clean fixture under `experiments/003-garbage-collection-pass/fixtures/`, then implemented `audit-garbage-collection.ps1` and `compare-audit-runs.ps1` to evaluate both snapshots with the same rules.
+- Commands or workflow: ran the audit against `fixtures/dirty/` and `fixtures/clean/`, wrote the outputs to `artifacts/dirty-audit.json` and `artifacts/clean-audit.json`, then compared them in `artifacts/audit-comparison.json`.
+- Result: pass. The dirty fixture produced 5 findings across 5 categories, the clean fixture produced 0 findings, and the comparison reported 100% cleanup effectiveness.
+- What worked: the audit categories were simple but covered multiple realistic entropy modes, and the before/after fixture pair made the result reproducible instead of anecdotal.
+- What failed: the audit rules are still heuristic and snapshot-based; they do not yet inspect semantic drift inside full prose documents.
+- What to change next: carry the same discipline into the next experiment by testing whether explicit checked-in plans improve restartability on a longer multi-step task.
+- Reusable lesson for `ms_bci_laboratory`: repository garbage collection should be treated as a normal automated hygiene pass. Even simple checks catch real drift before it compounds into agent-facing confusion.

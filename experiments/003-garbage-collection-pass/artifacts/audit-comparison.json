@@ -1,0 +1,95 @@
+{
+    "generated_at":  "2026-04-06T16:52:36.7869610+08:00",
+    "dirty":  {
+                  "generated_at":  "2026-04-06T16:52:36.6764469+08:00",
+                  "target_root":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\003-garbage-collection-pass\\fixtures\\dirty",
+                  "total_findings":  5,
+                  "category_counts":  [
+                                          {
+                                              "category":  "duplicate-helper",
+                                              "count":  1
+                                          },
+                                          {
+                                              "category":  "missing-log-entry",
+                                              "count":  1
+                                          },
+                                          {
+                                              "category":  "orphan-artifact",
+                                              "count":  1
+                                          },
+                                          {
+                                              "category":  "placeholder-file",
+                                              "count":  1
+                                          },
+                                          {
+                                              "category":  "planned-current-overlap",
+                                              "count":  1
+                                          }
+                                      ],
+                  "findings":  [
+                                   {
+                                       "category":  "planned-current-overlap",
+                                       "message":  "Experiments are listed as both current and planned.",
+                                       "paths":  [
+                                                     "002-big-manual-comparison/"
+                                                 ]
+                                   },
+                                   {
+                                       "category":  "orphan-artifact",
+                                       "message":  "Artifact is not referenced by the experiment README.",
+                                       "paths":  [
+                                                     "experiments\\001-source-of-truth-discovery\\artifacts\\orphan-debug.txt"
+                                                 ]
+                                   },
+                                   {
+                                       "category":  "missing-log-entry",
+                                       "message":  "Experiment directory exists without a matching log entry.",
+                                       "paths":  [
+                                                     "experiments\\002-big-manual-comparison"
+                                                 ]
+                                   },
+                                   {
+                                       "category":  "duplicate-helper",
+                                       "message":  "Multiple helper scripts share identical content.",
+                                       "paths":  [
+                                                     "scripts\\measure-navigation-copy.ps1",
+                                                     "scripts\\measure-navigation.ps1"
+                                                 ]
+                                   },
+                                   {
+                                       "category":  "placeholder-file",
+                                       "message":  "Placeholder file should be deleted or converted into a tracked work item.",
+                                       "paths":  [
+                                                     "notes\\PLACEHOLDER.md"
+                                                 ]
+                                   }
+                               ]
+              },
+    "clean":  {
+                  "generated_at":  "2026-04-06T16:52:36.7629603+08:00",
+                  "target_root":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\003-garbage-collection-pass\\fixtures\\clean",
+                  "total_findings":  0,
+                  "category_counts":  [
+
+                                      ],
+                  "findings":  [
+
+                               ]
+              },
+    "delta":  {
+                  "findings_removed":  5,
+                  "cleanup_effectiveness_percent":  100,
+                  "dirty_categories":  [
+                                           "duplicate-helper",
+                                           "missing-log-entry",
+                                           "orphan-artifact",
+                                           "placeholder-file",
+                                           "planned-current-overlap"
+                                       ],
+                  "clean_categories":  [
+
+                                       ]
+              },
+    "verdict":  "cleanup-pass-detected-and-cleared-expected-entropy",
+    "recommendation":  "Promote the audit categories into a reusable hygiene pass for future repos."
+}

@@ -1,0 +1,172 @@
+{
+    "generated_at":  "2026-04-06T16:37:45.3877728+08:00",
+    "baseline":  {
+                     "generated_at":  "2026-04-06T16:37:45.3017766+08:00",
+                     "root_path":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab",
+                     "relative_paths":  [
+                                            "AGENTS.md",
+                                            "README.md"
+                                        ],
+                     "files":  [
+                                   {
+                                       "path":  "AGENTS.md",
+                                       "lines":  31,
+                                       "words":  173,
+                                       "characters":  1275,
+                                       "pack_line_start":  1,
+                                       "pack_line_end":  31,
+                                       "referenced_required_paths":  [
+                                                                         "README.md",
+                                                                         "docs/knowledge/harness-engineering-overview.md",
+                                                                         "docs/plans/experiment-plan.md",
+                                                                         "docs/plans/experiment-log.md"
+                                                                     ]
+                                   },
+                                   {
+                                       "path":  "README.md",
+                                       "lines":  24,
+                                       "words":  121,
+                                       "characters":  933,
+                                       "pack_line_start":  32,
+                                       "pack_line_end":  55,
+                                       "referenced_required_paths":  [
+                                                                         "docs/knowledge/harness-engineering-overview.md",
+                                                                         "docs/plans/experiment-plan.md",
+                                                                         "docs/plans/experiment-log.md"
+                                                                     ]
+                                   }
+                               ],
+                     "summary":  {
+                                     "file_count":  2,
+                                     "lines":  55,
+                                     "words":  294,
+                                     "characters":  2208,
+                                     "required_path_count":  4,
+                                     "required_paths_covered":  4,
+                                     "required_coverage_rate":  1,
+                                     "first_required_mention_pack_line":  12,
+                                     "average_first_mention_pack_line":  14.75,
+                                     "total_required_path_mentions":  8,
+                                     "required_path_mentions_per_100_words":  2.72,
+                                     "missing_required_paths":  [
+
+                                                                ]
+                                 },
+                     "required_path_coverage":  [
+                                                    {
+                                                        "path":  "README.md",
+                                                        "mentioned_in_pack":  true,
+                                                        "mention_count":  1,
+                                                        "first_mention_file":  "AGENTS.md",
+                                                        "first_mention_line_in_file":  17,
+                                                        "first_mention_pack_line":  17
+                                                    },
+                                                    {
+                                                        "path":  "docs/knowledge/harness-engineering-overview.md",
+                                                        "mentioned_in_pack":  true,
+                                                        "mention_count":  2,
+                                                        "first_mention_file":  "AGENTS.md",
+                                                        "first_mention_line_in_file":  17,
+                                                        "first_mention_pack_line":  17
+                                                    },
+                                                    {
+                                                        "path":  "docs/plans/experiment-plan.md",
+                                                        "mentioned_in_pack":  true,
+                                                        "mention_count":  3,
+                                                        "first_mention_file":  "AGENTS.md",
+                                                        "first_mention_line_in_file":  12,
+                                                        "first_mention_pack_line":  12
+                                                    },
+                                                    {
+                                                        "path":  "docs/plans/experiment-log.md",
+                                                        "mentioned_in_pack":  true,
+                                                        "mention_count":  2,
+                                                        "first_mention_file":  "AGENTS.md",
+                                                        "first_mention_line_in_file":  13,
+                                                        "first_mention_pack_line":  13
+                                                    }
+                                                ]
+                 },
+    "giant_manual":  {
+                         "generated_at":  "2026-04-06T16:37:45.3737756+08:00",
+                         "root_path":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab",
+                         "relative_paths":  [
+                                                "experiments/002-big-manual-comparison/fixtures/MEGA-MANUAL.md"
+                                            ],
+                         "files":  [
+                                       {
+                                           "path":  "experiments/002-big-manual-comparison/fixtures/MEGA-MANUAL.md",
+                                           "lines":  201,
+                                           "words":  1036,
+                                           "characters":  6953,
+                                           "pack_line_start":  1,
+                                           "pack_line_end":  201,
+                                           "referenced_required_paths":  [
+                                                                             "README.md",
+                                                                             "docs/knowledge/harness-engineering-overview.md",
+                                                                             "docs/plans/experiment-plan.md",
+                                                                             "docs/plans/experiment-log.md"
+                                                                         ]
+                                       }
+                                   ],
+                         "summary":  {
+                                         "file_count":  1,
+                                         "lines":  201,
+                                         "words":  1036,
+                                         "characters":  6953,
+                                         "required_path_count":  4,
+                                         "required_paths_covered":  4,
+                                         "required_coverage_rate":  1,
+                                         "first_required_mention_pack_line":  185,
+                                         "average_first_mention_pack_line":  188,
+                                         "total_required_path_mentions":  5,
+                                         "required_path_mentions_per_100_words":  0.48,
+                                         "missing_required_paths":  [
+
+                                                                    ]
+                                     },
+                         "required_path_coverage":  [
+                                                        {
+                                                            "path":  "README.md",
+                                                            "mentioned_in_pack":  true,
+                                                            "mention_count":  2,
+                                                            "first_mention_file":  "experiments/002-big-manual-comparison/fixtures/MEGA-MANUAL.md",
+                                                            "first_mention_line_in_file":  185,
+                                                            "first_mention_pack_line":  185
+                                                        },
+                                                        {
+                                                            "path":  "docs/knowledge/harness-engineering-overview.md",
+                                                            "mentioned_in_pack":  true,
+                                                            "mention_count":  1,
+                                                            "first_mention_file":  "experiments/002-big-manual-comparison/fixtures/MEGA-MANUAL.md",
+                                                            "first_mention_line_in_file":  187,
+                                                            "first_mention_pack_line":  187
+                                                        },
+                                                        {
+                                                            "path":  "docs/plans/experiment-plan.md",
+                                                            "mentioned_in_pack":  true,
+                                                            "mention_count":  1,
+                                                            "first_mention_file":  "experiments/002-big-manual-comparison/fixtures/MEGA-MANUAL.md",
+                                                            "first_mention_line_in_file":  189,
+                                                            "first_mention_pack_line":  189
+                                                        },
+                                                        {
+                                                            "path":  "docs/plans/experiment-log.md",
+                                                            "mentioned_in_pack":  true,
+                                                            "mention_count":  1,
+                                                            "first_mention_file":  "experiments/002-big-manual-comparison/fixtures/MEGA-MANUAL.md",
+                                                            "first_mention_line_in_file":  191,
+                                                            "first_mention_pack_line":  191
+                                                        }
+                                                    ]
+                     },
+    "deltas":  {
+                   "word_multiplier":  3.52,
+                   "line_multiplier":  3.65,
+                   "first_required_mention_line_delta":  173,
+                   "average_first_mention_line_delta":  173.25,
+                   "density_delta":  -2.24
+               },
+    "verdict":  "giant-manual-is-functionally-complete-but-structurally-worse",
+    "recommendation":  "Keep a short top-level map, keep deep detail in linked docs, and treat giant manuals as experiment fixtures rather than production repo guidance."
+}

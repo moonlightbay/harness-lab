@@ -30,6 +30,6 @@ Initial run on 2026-04-06: pass.
 
 - Required docs were found before any edits.
 - Human clarification required: 0.
-- Top-level navigation pack: 2 files, 39 lines, 294 words.
+- Top-level navigation pack: 2 files, 55 lines, 294 words.
 - Top-level navigation pack metrics are stored in `artifacts/top-level-map-metrics.json`.
-- The follow-up giant-manual comparison is still pending.
+- The follow-up giant-manual comparison was completed in `../002-big-manual-comparison/`.

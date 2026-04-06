@@ -232,6 +232,11 @@ Rationale:
 
 Run the first repository-legibility experiment and define the first garbage-collection rules.
 
+Status note:
+
+- Experiment 001, Experiment 002, and Experiment 003 were completed on 2026-04-06.
+- The next useful step is `plan-vs-no-plan/` so Layer D can be tested with the same artifact-first discipline.
+
 ### Sprint 1 tasks
 
 1. Finalize repo structure and docs.
