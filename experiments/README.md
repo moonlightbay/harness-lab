@@ -14,7 +14,8 @@ Current experiments:
 - `008-git-workflow-patterns/`: compares nested dirty changes in one branch with branch-per-task worktrees using a real Git fixture and isolation scorer.
 - `009-role-based-agent-workflow/`: compares a single generalist agent with a sequential role-divided workflow and measures the auditability gain versus cost.
 - `010-stale-doc-and-duplicate-guidance/`: compares a clean short map against stale-authority and duplicate-authority top-level guidance failures.
+- `011-evaluation-harness/`: normalizes representative experiment results into one recurring scoreboard and recommendation set.
 
 Planned next experiments:
 
-- `011-evaluation-harness/`
+- `012-minimal-harness-template/`

@@ -1,0 +1,58 @@
+[
+  {
+    "case_id": "short-top-level-map",
+    "experiment": "002-big-manual-comparison",
+    "layer": "A/B",
+    "pattern": "Keep a short top-level map instead of a giant manual.",
+    "comparison_artifact": "experiments/002-big-manual-comparison/artifacts/navigation-pack-comparison.json",
+    "extractor": "short_map"
+  },
+  {
+    "case_id": "current-singular-guidance",
+    "experiment": "010-stale-doc-and-duplicate-guidance",
+    "layer": "B",
+    "pattern": "Keep top-level guidance current and singular about source-of-truth ownership.",
+    "comparison_artifact": "experiments/010-stale-doc-and-duplicate-guidance/artifacts/legibility-failure-comparison.json",
+    "extractor": "guidance_freshness"
+  },
+  {
+    "case_id": "checked-in-execution-plan",
+    "experiment": "004-plan-vs-no-plan",
+    "layer": "D",
+    "pattern": "Use a checked-in execution plan for multi-step work.",
+    "comparison_artifact": "experiments/004-plan-vs-no-plan/artifacts/run-comparison.json",
+    "extractor": "plan_vs_no_plan"
+  },
+  {
+    "case_id": "custom-architecture-rule",
+    "experiment": "005-lint-feedback-loop",
+    "layer": "C",
+    "pattern": "Add at least one custom architecture rule on top of syntax and tests.",
+    "comparison_artifact": "experiments/005-lint-feedback-loop/artifacts/feedback-comparison.json",
+    "extractor": "lint_feedback"
+  },
+  {
+    "case_id": "branch-per-task-worktrees",
+    "experiment": "008-git-workflow-patterns",
+    "layer": "F",
+    "pattern": "Use branch-per-task worktrees for concurrent active tasks.",
+    "comparison_artifact": "experiments/008-git-workflow-patterns/artifacts/workflow-comparison.json",
+    "extractor": "git_worktree"
+  },
+  {
+    "case_id": "role-divided-workflow",
+    "experiment": "009-role-based-agent-workflow",
+    "layer": "E",
+    "pattern": "Use a role-divided workflow when audit trail matters more than raw efficiency.",
+    "comparison_artifact": "experiments/009-role-based-agent-workflow/artifacts/role-workflow-comparison.json",
+    "extractor": "role_based_workflow"
+  },
+  {
+    "case_id": "remediation-oriented-live-feedback",
+    "experiment": "007-live-repair-ab",
+    "layer": "C",
+    "pattern": "Prefer remediation-oriented failing checks when the live repair benefit is proven.",
+    "comparison_artifact": "experiments/007-live-repair-ab/artifacts/live-comparison.json",
+    "extractor": "live_repair_feedback"
+  }
+]

@@ -149,3 +149,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: this is still a controlled document-fixture study rather than a repeated live agent navigation benchmark, so it measures steering-risk proxies instead of broad behavior.
 - What to change next: build a lightweight evaluation harness so the growing experiment set can be tracked under one shared scoreboard.
 - Reusable lesson for future host repos: top-level guidance must stay short, current, and singular. Dead source-of-truth links and duplicate ownership claims should be treated as garbage-collection failures even when the current docs are still mentioned somewhere else.
+
+### 2026-04-06 - Experiment 011: evaluation harness
+
+- Layer: G
+- Hypothesis: The existing experiment set is rich enough to support a lightweight shared scoreboard that distinguishes default harness patterns, conditional patterns, and still-inconclusive patterns without rerunning every underlying experiment.
+- Setup: Defined a seven-case suite in `experiments/011-evaluation-harness/suite-spec.json`, wrote a normalization rubric in `rubric.md`, and implemented `evaluate-suite.py` to consume comparison artifacts from Experiments 002, 004, 005, 007, 008, 009, and 010.
+- Commands or workflow: ran `python experiments/011-evaluation-harness/evaluate-suite.py`, then wrote the normalized outputs to `artifacts/evaluation-scoreboard.json` and `artifacts/evaluation-summary.md`.
+- Result: pass. The scoreboard produced five default-tier patterns, one conditional pattern, and one needs-more-data pattern.
+- What worked: the shared scorecard made cost visible beside benefit, and it prevented the inconclusive live repair case from being promoted just because its narrative sounded promising.
+- What failed: the normalization logic is intentionally opinionated and case-specific, so it should be treated as a first evaluation harness rather than a final universal benchmark.
+- What to change next: turn the default-tier patterns into a minimal reusable harness template, then rerun this scoreboard whenever new experiments are added.
+- Reusable lesson for future host repos: once multiple harness ideas exist, evaluation should compare patterns under one recurring scoreboard. Otherwise teams will overweight the freshest anecdote instead of the strongest evidence.

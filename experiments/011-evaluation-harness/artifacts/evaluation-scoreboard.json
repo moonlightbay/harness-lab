@@ -1,0 +1,328 @@
+{
+  "generated_at": "2026-04-06T21:31:45.201881+08:00",
+  "suite_name": "harness-lab-lightweight-scoreboard",
+  "case_count": 7,
+  "tier_counts": {
+    "default": 5,
+    "conditional": 1,
+    "needs-more-data": 1
+  },
+  "cases": [
+    {
+      "case_id": "short-top-level-map",
+      "experiment": "002-big-manual-comparison",
+      "layer": "A/B",
+      "pattern": "Keep a short top-level map instead of a giant manual.",
+      "preferred_pattern": "short-top-level-map",
+      "comparison_artifact": "experiments/002-big-manual-comparison/artifacts/navigation-pack-comparison.json",
+      "verdict": "giant-manual-is-functionally-complete-but-structurally-worse",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 0,
+        "net_value": 12
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "word_multiplier=3.52",
+        "first_required_mention_line_delta=173",
+        "density_delta=-2.24"
+      ]
+    },
+    {
+      "case_id": "current-singular-guidance",
+      "experiment": "010-stale-doc-and-duplicate-guidance",
+      "layer": "B",
+      "pattern": "Keep top-level guidance current and singular about source-of-truth ownership.",
+      "preferred_pattern": "current-singular-guidance",
+      "comparison_artifact": "experiments/010-stale-doc-and-duplicate-guidance/artifacts/legibility-failure-comparison.json",
+      "verdict": "coverage-alone-does-not-protect-agent-legibility",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 0,
+        "net_value": 12
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "baseline_total=12",
+        "stale_doc_total=6",
+        "duplicate_guidance_total=8"
+      ]
+    },
+    {
+      "case_id": "checked-in-execution-plan",
+      "experiment": "004-plan-vs-no-plan",
+      "layer": "D",
+      "pattern": "Use a checked-in execution plan for multi-step work.",
+      "preferred_pattern": "checked-in-execution-plan",
+      "comparison_artifact": "experiments/004-plan-vs-no-plan/artifacts/run-comparison.json",
+      "verdict": "plan-driven-run-is-easier-to-resume-and-audit",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 1,
+        "net_value": 11
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "result_quality_delta=1",
+        "restartability_delta=4",
+        "auditability_delta=4",
+        "total_delta=9"
+      ]
+    },
+    {
+      "case_id": "custom-architecture-rule",
+      "experiment": "005-lint-feedback-loop",
+      "layer": "C",
+      "pattern": "Add at least one custom architecture rule on top of syntax and tests.",
+      "preferred_pattern": "custom-architecture-rule",
+      "comparison_artifact": "experiments/005-lint-feedback-loop/artifacts/feedback-comparison.json",
+      "verdict": "strong-feedback-loop-preserves-structure-better",
+      "scores": {
+        "primary_outcome_gain": 3,
+        "steering_gain": 3,
+        "reproducibility": 4,
+        "cost_penalty": 1,
+        "net_value": 9
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "functional_delta=0",
+        "architecture_delta=3",
+        "total_delta=3"
+      ]
+    },
+    {
+      "case_id": "branch-per-task-worktrees",
+      "experiment": "008-git-workflow-patterns",
+      "layer": "F",
+      "pattern": "Use branch-per-task worktrees for concurrent active tasks.",
+      "preferred_pattern": "branch-per-task-worktrees",
+      "comparison_artifact": "experiments/008-git-workflow-patterns/artifacts/workflow-comparison.json",
+      "verdict": "worktree-pattern-preserves-task-isolation-better",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 1,
+        "net_value": 11
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "delta=8",
+        "nested_single_branch=0/8",
+        "branch_per_task_worktrees=8/8"
+      ]
+    },
+    {
+      "case_id": "role-divided-workflow",
+      "experiment": "009-role-based-agent-workflow",
+      "layer": "E",
+      "pattern": "Use a role-divided workflow when audit trail matters more than raw efficiency.",
+      "preferred_pattern": "role-divided-workflow",
+      "comparison_artifact": "experiments/009-role-based-agent-workflow/artifacts/role-workflow-comparison.json",
+      "verdict": "role-division-improves-auditability-at-higher-cost",
+      "scores": {
+        "primary_outcome_gain": 0,
+        "steering_gain": 4,
+        "reproducibility": 2,
+        "cost_penalty": 4,
+        "net_value": 2
+      },
+      "recommendation_tier": "conditional",
+      "notes": [
+        "product_score_delta=0",
+        "auditability_score_delta=5",
+        "session_count_delta=3",
+        "input_tokens_delta=219199"
+      ]
+    },
+    {
+      "case_id": "remediation-oriented-live-feedback",
+      "experiment": "007-live-repair-ab",
+      "layer": "C",
+      "pattern": "Prefer remediation-oriented failing checks when the live repair benefit is proven.",
+      "preferred_pattern": "remediation-oriented-live-feedback",
+      "comparison_artifact": "experiments/007-live-repair-ab/artifacts/live-comparison.json",
+      "verdict": "inconclusive",
+      "scores": {
+        "primary_outcome_gain": 0,
+        "steering_gain": 1,
+        "reproducibility": 2,
+        "cost_penalty": 2,
+        "net_value": 1
+      },
+      "recommendation_tier": "needs-more-data",
+      "notes": [
+        "total_score_delta=0",
+        "input_tokens_delta=-18413",
+        "output_tokens_delta=712",
+        "changed_file_count_delta=1"
+      ]
+    }
+  ],
+  "ranked_cases": [
+    {
+      "case_id": "current-singular-guidance",
+      "experiment": "010-stale-doc-and-duplicate-guidance",
+      "layer": "B",
+      "pattern": "Keep top-level guidance current and singular about source-of-truth ownership.",
+      "preferred_pattern": "current-singular-guidance",
+      "comparison_artifact": "experiments/010-stale-doc-and-duplicate-guidance/artifacts/legibility-failure-comparison.json",
+      "verdict": "coverage-alone-does-not-protect-agent-legibility",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 0,
+        "net_value": 12
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "baseline_total=12",
+        "stale_doc_total=6",
+        "duplicate_guidance_total=8"
+      ]
+    },
+    {
+      "case_id": "short-top-level-map",
+      "experiment": "002-big-manual-comparison",
+      "layer": "A/B",
+      "pattern": "Keep a short top-level map instead of a giant manual.",
+      "preferred_pattern": "short-top-level-map",
+      "comparison_artifact": "experiments/002-big-manual-comparison/artifacts/navigation-pack-comparison.json",
+      "verdict": "giant-manual-is-functionally-complete-but-structurally-worse",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 0,
+        "net_value": 12
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "word_multiplier=3.52",
+        "first_required_mention_line_delta=173",
+        "density_delta=-2.24"
+      ]
+    },
+    {
+      "case_id": "branch-per-task-worktrees",
+      "experiment": "008-git-workflow-patterns",
+      "layer": "F",
+      "pattern": "Use branch-per-task worktrees for concurrent active tasks.",
+      "preferred_pattern": "branch-per-task-worktrees",
+      "comparison_artifact": "experiments/008-git-workflow-patterns/artifacts/workflow-comparison.json",
+      "verdict": "worktree-pattern-preserves-task-isolation-better",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 1,
+        "net_value": 11
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "delta=8",
+        "nested_single_branch=0/8",
+        "branch_per_task_worktrees=8/8"
+      ]
+    },
+    {
+      "case_id": "checked-in-execution-plan",
+      "experiment": "004-plan-vs-no-plan",
+      "layer": "D",
+      "pattern": "Use a checked-in execution plan for multi-step work.",
+      "preferred_pattern": "checked-in-execution-plan",
+      "comparison_artifact": "experiments/004-plan-vs-no-plan/artifacts/run-comparison.json",
+      "verdict": "plan-driven-run-is-easier-to-resume-and-audit",
+      "scores": {
+        "primary_outcome_gain": 4,
+        "steering_gain": 4,
+        "reproducibility": 4,
+        "cost_penalty": 1,
+        "net_value": 11
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "result_quality_delta=1",
+        "restartability_delta=4",
+        "auditability_delta=4",
+        "total_delta=9"
+      ]
+    },
+    {
+      "case_id": "custom-architecture-rule",
+      "experiment": "005-lint-feedback-loop",
+      "layer": "C",
+      "pattern": "Add at least one custom architecture rule on top of syntax and tests.",
+      "preferred_pattern": "custom-architecture-rule",
+      "comparison_artifact": "experiments/005-lint-feedback-loop/artifacts/feedback-comparison.json",
+      "verdict": "strong-feedback-loop-preserves-structure-better",
+      "scores": {
+        "primary_outcome_gain": 3,
+        "steering_gain": 3,
+        "reproducibility": 4,
+        "cost_penalty": 1,
+        "net_value": 9
+      },
+      "recommendation_tier": "default",
+      "notes": [
+        "functional_delta=0",
+        "architecture_delta=3",
+        "total_delta=3"
+      ]
+    },
+    {
+      "case_id": "role-divided-workflow",
+      "experiment": "009-role-based-agent-workflow",
+      "layer": "E",
+      "pattern": "Use a role-divided workflow when audit trail matters more than raw efficiency.",
+      "preferred_pattern": "role-divided-workflow",
+      "comparison_artifact": "experiments/009-role-based-agent-workflow/artifacts/role-workflow-comparison.json",
+      "verdict": "role-division-improves-auditability-at-higher-cost",
+      "scores": {
+        "primary_outcome_gain": 0,
+        "steering_gain": 4,
+        "reproducibility": 2,
+        "cost_penalty": 4,
+        "net_value": 2
+      },
+      "recommendation_tier": "conditional",
+      "notes": [
+        "product_score_delta=0",
+        "auditability_score_delta=5",
+        "session_count_delta=3",
+        "input_tokens_delta=219199"
+      ]
+    },
+    {
+      "case_id": "remediation-oriented-live-feedback",
+      "experiment": "007-live-repair-ab",
+      "layer": "C",
+      "pattern": "Prefer remediation-oriented failing checks when the live repair benefit is proven.",
+      "preferred_pattern": "remediation-oriented-live-feedback",
+      "comparison_artifact": "experiments/007-live-repair-ab/artifacts/live-comparison.json",
+      "verdict": "inconclusive",
+      "scores": {
+        "primary_outcome_gain": 0,
+        "steering_gain": 1,
+        "reproducibility": 2,
+        "cost_penalty": 2,
+        "net_value": 1
+      },
+      "recommendation_tier": "needs-more-data",
+      "notes": [
+        "total_score_delta=0",
+        "input_tokens_delta=-18413",
+        "output_tokens_delta=712",
+        "changed_file_count_delta=1"
+      ]
+    }
+  ]
+}

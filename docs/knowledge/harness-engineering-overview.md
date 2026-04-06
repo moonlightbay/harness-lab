@@ -149,6 +149,16 @@ Implication for practice:
 - treat stale docs, dead experiment artifacts, and duplicate helper logic as harness failures, not cosmetic issues
 - capture human taste once, then enforce it continuously through docs, scripts, linters, or cleanup agents
 
+### 3.11 Evaluation harnesses should compare patterns, not only runs
+
+Once a lab accumulates multiple one-off experiments, the next bottleneck is comparison. Without a shared scoreboard, it becomes too easy to overfit to whichever experiment was run most recently.
+
+Implication for practice:
+
+- normalize experiments into a small recurring scorecard
+- compare benefit and cost in one place
+- keep an explicit "needs more data" bucket so inconclusive wins are not promoted too early
+
 ## 4. What seems directly applicable to a future host repository
 
 Most applicable:
