@@ -80,6 +80,7 @@ Experiments:
 4. Compare outcomes with and without the custom rule.
 5. Compare requirement-only, review-comment, generic failing-check, and remediation-oriented failing-check feedback on the same violation.
 6. Score which feedback shape is most ready for an autonomous repair loop.
+7. Run a live repair A/B so the stronger feedback representation is tested against a real Codex execution loop, not only a static scorer.
 
 Artifacts:
 
@@ -237,7 +238,7 @@ Run the first repository-legibility experiment and define the first garbage-coll
 
 Status note:
 
-- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, and Experiment 006 were completed on 2026-04-06.
+- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, and Experiment 007 were completed on 2026-04-06.
 - The next useful step is `git-workflow-patterns/` so Layer F can be tested with the same artifact-first discipline.
 
 ### Sprint 1 tasks

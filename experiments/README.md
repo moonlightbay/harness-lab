@@ -10,6 +10,7 @@ Current experiments:
 - `004-plan-vs-no-plan/`: compares no-plan and plan-driven run packages on the same refactor task.
 - `005-lint-feedback-loop/`: compares basic functional checks with a stronger feedback loop that adds a custom architecture rule.
 - `006-feedback-representation-loop/`: compares four ways of expressing the same architecture failure and scores which one is most loop-ready for agent repair.
+- `007-live-repair-ab/`: runs two real Codex repair loops against the same broken workspace and compares generic versus remediation-oriented architecture feedback.
 
 Planned next experiments:
 

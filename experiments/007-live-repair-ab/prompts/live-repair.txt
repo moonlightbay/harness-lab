@@ -1,0 +1,14 @@
+You are repairing a small Python workspace in the current directory.
+
+Read `TASK.md` first, then inspect the relevant files before editing.
+
+Constraints:
+
+- Make the smallest coherent change that satisfies the task.
+- Do not add new dependencies.
+- Do not edit files outside the current workspace.
+- Use the available verification commands during the run:
+  - `python verify-basic.py`
+  - `python check-architecture.py`
+
+Stop only when both verification commands pass. In your final message, state the files you changed and whether both commands passed.

@@ -1,0 +1,11 @@
+**Done**
+- Kept `report_app/cli.py` thin by importing and delegating to `build_report` from `report_app.service` at `report_app/cli.py:6` and `report_app/cli.py:14`.
+- Completed `build_report` in `report_app/service.py:6` so the service owns `unique_items` and `summary_line` while still using `normalize_items` from the domain.
+
+**Files Changed**
+- `report_app/cli.py:6`
+- `report_app/service.py:6`
+
+**Verification**
+- `python verify-basic.py .` passed.
+- `python check-architecture.py` passed.

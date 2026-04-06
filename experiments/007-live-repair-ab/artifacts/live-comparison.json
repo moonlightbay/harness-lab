@@ -1,0 +1,205 @@
+﻿{
+  "generic_check": {
+    "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\007-live-repair-ab\\runs\\generic-check\\workspace",
+    "functional": {
+      "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\007-live-repair-ab\\runs\\generic-check\\workspace",
+      "checks": [
+        {
+          "name": "package-compiles",
+          "passed": true,
+          "detail": "Listing 'report_app'...\nListing 'tests'..."
+        },
+        {
+          "name": "unit-tests-pass",
+          "passed": true,
+          "detail": "test_cli_outputs_summary_fields (test_cli_output.CliOutputTests.test_cli_outputs_summary_fields) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.103s\n\nOK"
+        },
+        {
+          "name": "unique-items-field",
+          "passed": true,
+          "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+        },
+        {
+          "name": "summary-line-field",
+          "passed": true,
+          "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+        },
+        {
+          "name": "readme-updated",
+          "passed": true,
+          "detail": "README mentions unique_items and summary_line"
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "total": 5
+      }
+    },
+    "architecture": {
+      "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\007-live-repair-ab\\runs\\generic-check\\workspace",
+      "checks": [
+        {
+          "name": "normalize-items-in-domain",
+          "passed": true,
+          "detail": "Expected normalize_items in report_app/domain.py"
+        },
+        {
+          "name": "normalize-items-only-in-domain",
+          "passed": true,
+          "detail": "Found normalize_items in ['domain.py']"
+        },
+        {
+          "name": "build-report-in-service",
+          "passed": true,
+          "detail": "Expected build_report in report_app/service.py"
+        },
+        {
+          "name": "build-report-only-in-service",
+          "passed": true,
+          "detail": "Found build_report in ['service.py']"
+        },
+        {
+          "name": "service-imports-normalize-items",
+          "passed": true,
+          "detail": "Expected service.py to import normalize_items from domain.py"
+        },
+        {
+          "name": "cli-delegates-to-service",
+          "passed": true,
+          "detail": "Expected cli.py to import build_report and avoid constructing report fields directly"
+        }
+      ],
+      "summary": {
+        "passed": 6,
+        "total": 6
+      }
+    },
+    "total": {
+      "score": 11,
+      "max": 11
+    },
+    "telemetry": {
+      "turn_count": 1,
+      "input_tokens": 123871,
+      "cached_input_tokens": 108416,
+      "output_tokens": 2219,
+      "item_type_counts": {
+        "reasoning": 6,
+        "agent_message": 9,
+        "command_execution": 14,
+        "file_change": 2
+      }
+    },
+    "changed_files": [
+      "report_app/cli.py",
+      "report_app/service.py"
+    ],
+    "changed_file_count": 2
+  },
+  "remediation_check": {
+    "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\007-live-repair-ab\\runs\\remediation-check\\workspace",
+    "functional": {
+      "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\007-live-repair-ab\\runs\\remediation-check\\workspace",
+      "checks": [
+        {
+          "name": "package-compiles",
+          "passed": true,
+          "detail": "Listing 'report_app'...\nListing 'tests'..."
+        },
+        {
+          "name": "unit-tests-pass",
+          "passed": true,
+          "detail": "test_cli_outputs_summary_fields (test_cli_output.CliOutputTests.test_cli_outputs_summary_fields) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.103s\n\nOK"
+        },
+        {
+          "name": "unique-items-field",
+          "passed": true,
+          "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+        },
+        {
+          "name": "summary-line-field",
+          "passed": true,
+          "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+        },
+        {
+          "name": "readme-updated",
+          "passed": true,
+          "detail": "README mentions unique_items and summary_line"
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "total": 5
+      }
+    },
+    "architecture": {
+      "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\007-live-repair-ab\\runs\\remediation-check\\workspace",
+      "checks": [
+        {
+          "name": "normalize-items-in-domain",
+          "passed": true,
+          "detail": "Expected normalize_items in report_app/domain.py"
+        },
+        {
+          "name": "normalize-items-only-in-domain",
+          "passed": true,
+          "detail": "Found normalize_items in ['domain.py']"
+        },
+        {
+          "name": "build-report-in-service",
+          "passed": true,
+          "detail": "Expected build_report in report_app/service.py"
+        },
+        {
+          "name": "build-report-only-in-service",
+          "passed": true,
+          "detail": "Found build_report in ['service.py']"
+        },
+        {
+          "name": "service-imports-normalize-items",
+          "passed": true,
+          "detail": "Expected service.py to import normalize_items from domain.py"
+        },
+        {
+          "name": "cli-delegates-to-service",
+          "passed": true,
+          "detail": "Expected cli.py to import build_report and avoid constructing report fields directly"
+        }
+      ],
+      "summary": {
+        "passed": 6,
+        "total": 6
+      }
+    },
+    "total": {
+      "score": 11,
+      "max": 11
+    },
+    "telemetry": {
+      "turn_count": 1,
+      "input_tokens": 105458,
+      "cached_input_tokens": 89600,
+      "output_tokens": 2931,
+      "item_type_counts": {
+        "reasoning": 8,
+        "agent_message": 9,
+        "command_execution": 14,
+        "file_change": 1
+      }
+    },
+    "changed_files": [
+      "report_app/cli.py",
+      "report_app/service.py",
+      "verify-basic.py"
+    ],
+    "changed_file_count": 3
+  },
+  "deltas": {
+    "total_score": 0,
+    "turn_count": 0,
+    "input_tokens": -18413,
+    "output_tokens": 712,
+    "changed_file_count": 1
+  },
+  "verdict": "inconclusive"
+}

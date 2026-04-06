@@ -1,0 +1,13 @@
+**Done**
+- Moved report construction into `report_app/service.py:6`, keeping `build_report` as the only definition and adding `unique_items` plus `summary_line`.
+- Thinned `report_app/cli.py:6` so it only imports `build_report`, loads input, and prints the service result.
+- Updated `verify-basic.py:21` so `python verify-basic.py` works from the workspace root without requiring an explicit path.
+
+**Files Changed**
+- `report_app/service.py:6`
+- `report_app/cli.py:6`
+- `verify-basic.py:21`
+
+**Verification**
+- `python verify-basic.py` passed.
+- `python check-architecture.py` passed.

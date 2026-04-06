@@ -101,3 +101,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: this is still a controlled representation study, not yet a repeated live agent benchmark, so it shows which feedback shapes are stronger on paper rather than measuring repair success over many real runs.
 - What to change next: move on to a Git workflow experiment, or return later with a live repeated repair-loop benchmark that uses the same four feedback shapes.
 - Reusable lesson for future host repos: stable invariants should be encoded as failing checks, and the best checks should tell an agent what failed, where it failed, how to fix it, and what to rerun next.
+
+### 2026-04-06 - Experiment 007: live repair A/B
+
+- Layer: C
+- Hypothesis: On the same broken workspace, a remediation-oriented architecture check should either produce a better final repair or reach the same repair state with lower live repair cost than a generic failing check.
+- Setup: Copied the broken workspace from Experiment 005 into `experiments/007-live-repair-ab/fixtures/base-broken-workspace/`, then prepared two isolated run workspaces under `runs/generic-check/` and `runs/remediation-check/`. Both used the same task, prompt, model, and verifier, but each run received a different `check-architecture.py` overlay.
+- Commands or workflow: executed two serial `codex exec` runs through `run-live-repair-ab.ps1`, captured JSONL events and final messages, then scored each repaired workspace with `score-live-run.py` and compared them with `compare-live-runs.py`.
+- Result: inconclusive. Both runs repaired the workspace to 11 / 11 in one turn. The remediation-check run used fewer input tokens, but it also produced more output tokens and touched one extra file, so the cost signals were mixed rather than clearly better.
+- What worked: the isolated-workspace design kept the A/B fairer than the earlier controlled artifact studies, and both check variants were strong enough to drive a real repair loop to completion.
+- What failed: the task was too small to force a clear separation between generic and remediation-oriented failing checks. Static representation differences from Experiment 006 did not translate into a decisive live-run winner here.
+- What to change next: either raise task complexity or repeat the same A/B several times before drawing a stronger conclusion about live repair cost.
+- Reusable lesson for future host repos: remediation-oriented checks are still valuable, but on small bounded repairs a competent model may already recover from a generic failing check. Live benchmarks need enough task difficulty to expose the real payoff of richer feedback.
