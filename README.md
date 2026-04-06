@@ -1,13 +1,13 @@
 ﻿# harness-lab
 
-A local lab repo for learning and validating harness engineering before migrating the ideas into `ms_bci_laboratory`.
+A local lab repo for learning and validating harness engineering before migrating the ideas into a future host repository.
 
 ## Current purpose
 
 This repository is intentionally small and documentation-first. Its job is to help answer two questions:
 
 1. What does "harness engineering" mean in practice for an agent-first software project?
-2. Which parts of that approach are worth migrating into the main BCI upper-computer project?
+2. Which parts of that approach are worth migrating into a larger production repository?
 
 ## Initial layout
 

@@ -9,13 +9,13 @@ Use this repository to understand harness engineering by practice, not only by r
 
 ## Global research question
 
-Which harness-engineering patterns are worth migrating into `ms_bci_laboratory` 2.0, and in what order?
+Which harness-engineering patterns are worth migrating into a future host repository, and in what order?
 
 ## Success criteria for the lab as a whole
 
 - We can clearly explain each major harness-engineering layer in our own words.
 - We complete at least one runnable or inspectable experiment for each layer.
-- We can identify a migration order for the main BCI project.
+- We can identify a migration order for a larger host repository.
 - We produce artifacts that can be reused directly in the future 2.0 refactor.
 - We can distinguish runtime compaction from repository garbage collection and validate both experimentally.
 
@@ -234,8 +234,8 @@ Run the first repository-legibility experiment and define the first garbage-coll
 
 Status note:
 
-- Experiment 001, Experiment 002, and Experiment 003 were completed on 2026-04-06.
-- The next useful step is `plan-vs-no-plan/` so Layer D can be tested with the same artifact-first discipline.
+- Experiment 001, Experiment 002, Experiment 003, and Experiment 004 were completed on 2026-04-06.
+- The next useful step is `lint-feedback-loop/` so Layer C can be tested with the same artifact-first discipline.
 
 ### Sprint 1 tasks
 
@@ -253,12 +253,12 @@ Status note:
 - an initial garbage-collection checklist exists
 - we can explain why short maps beat oversized manuals in this repo
 
-## Migration lens back to the BCI project
+## Migration lens back to a future host repository
 
 For each completed experiment, answer:
 
-1. Is this pattern useful for the BCI project?
+1. Is this pattern useful for the host repository?
 2. If yes, should it be applied at repo level, module level, or workflow level?
-3. What is the smallest safe pilot in the main repo?
-4. What risks appear when hardware, UI, and patient-facing workflows are involved?
+3. What is the smallest safe pilot in the target repo?
+4. What risks appear when domain-specific workflows and higher-stakes requirements are involved?
 5. Which cleanup tasks should be automated before migrating the pattern into a higher-risk repo?

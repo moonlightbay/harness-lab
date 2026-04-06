@@ -95,7 +95,7 @@ Terminology note:
 Topics still worth deeper study:
 
 - which parts of harness engineering transfer well to hardware-integrated desktop software
-- how to adapt lighter merge gates to a high-risk medical/robotics codebase
+- how to adapt lighter merge gates to a high-risk production codebase
 - how to build evaluation harnesses for GUI + hardware workflows
 - how to combine local agents and cloud agents safely in a regulated engineering context
 - which cleanup tasks belong to repository garbage collection versus runtime compaction

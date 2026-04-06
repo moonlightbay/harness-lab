@@ -33,7 +33,7 @@ This is a DevOps platform company and product line. It is useful in CI/CD contex
 
 ### 2.3 Open Harness
 
-This is a separate open-source project that aims to provide one API across different agent harness implementations. It is relevant as ecosystem context, but it is not the primary thing to study for refactoring the BCI project.
+This is a separate open-source project that aims to provide one API across different agent harness implementations. It is relevant as ecosystem context, but it is not the primary thing to study for refactoring a future host repository.
 
 ## 3. Core ideas extracted from current sources
 
@@ -145,7 +145,7 @@ Implication for practice:
 - treat stale docs, dead experiment artifacts, and duplicate helper logic as harness failures, not cosmetic issues
 - capture human taste once, then enforce it continuously through docs, scripts, linters, or cleanup agents
 
-## 4. What seems directly applicable to the BCI project
+## 4. What seems directly applicable to a future host repository
 
 Most applicable:
 
@@ -153,7 +153,7 @@ Most applicable:
 - execution plans for long refactors
 - per-module validation harnesses
 - explicit layering between UI, application, hardware, and runtime
-- stronger feedback loops for hardware workflows
+- stronger feedback loops for higher-risk workflows
 - doc gardening and lightweight garbage-collection routines for stale knowledge and low-value artifacts
 - using agents for documentation, refactors, review, and migration scaffolding
 

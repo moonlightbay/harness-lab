@@ -14,7 +14,7 @@ Use this file to record outcomes as the lab progresses.
 - What worked:
 - What failed:
 - What to change next:
-- Reusable lesson for `ms_bci_laboratory`:
+- Reusable lesson for future host repos:
 
 ## Entries
 
@@ -28,7 +28,7 @@ Use this file to record outcomes as the lab progresses.
 - What worked: the smallest useful skeleton is clear.
 - What failed: no runnable experiment exists yet.
 - What to change next: add the first toy project and comparison scenario.
-- Reusable lesson for `ms_bci_laboratory`: start with structure and plans before starting invasive refactors.
+- Reusable lesson for future host repos: start with structure and plans before starting invasive refactors.
 
 ### 2026-04-06 - Experiment 001: source-of-truth discovery
 
@@ -40,7 +40,7 @@ Use this file to record outcomes as the lab progresses.
 - What worked: the short map made the source-of-truth docs explicit, and the top-level context stayed small enough to scan quickly.
 - What failed: the baseline alone could not prove that the short map was better than a larger but complete alternative.
 - What to change next: extend the comparison into cleanup and stale-doc failure cases.
-- Reusable lesson for `ms_bci_laboratory`: keep the top-level agent map short, name the source-of-truth docs explicitly, and pair that with lightweight cleanup rules before the repo grows.
+- Reusable lesson for future host repos: keep the top-level agent map short, name the source-of-truth docs explicitly, and pair that with lightweight cleanup rules before the repo grows.
 
 ### 2026-04-06 - Experiment 002: big manual comparison
 
@@ -52,7 +52,7 @@ Use this file to record outcomes as the lab progresses.
 - What worked: the shared measurement script made the A/B comparison repeatable and showed that coverage alone is not enough; placement and density also matter.
 - What failed: this is still a synthetic fixture, not a blinded multi-agent study, so the result is strong structural evidence rather than a broad behavioral benchmark.
 - What to change next: run the same comparison against stale-doc and duplicate-guidance variants, then turn the cleanup checklist into a repeatable garbage-collection pass.
-- Reusable lesson for `ms_bci_laboratory`: do not replace a short repo map with a single large manual. Keep top-level guidance short, link outward, and measure discoverability with concrete proxies instead of relying on completeness alone.
+- Reusable lesson for future host repos: do not replace a short repo map with a single large manual. Keep top-level guidance short, link outward, and measure discoverability with concrete proxies instead of relying on completeness alone.
 
 ### 2026-04-06 - Experiment 003: garbage collection pass
 
@@ -64,4 +64,16 @@ Use this file to record outcomes as the lab progresses.
 - What worked: the audit categories were simple but covered multiple realistic entropy modes, and the before/after fixture pair made the result reproducible instead of anecdotal.
 - What failed: the audit rules are still heuristic and snapshot-based; they do not yet inspect semantic drift inside full prose documents.
 - What to change next: carry the same discipline into the next experiment by testing whether explicit checked-in plans improve restartability on a longer multi-step task.
-- Reusable lesson for `ms_bci_laboratory`: repository garbage collection should be treated as a normal automated hygiene pass. Even simple checks catch real drift before it compounds into agent-facing confusion.
+- Reusable lesson for future host repos: repository garbage collection should be treated as a normal automated hygiene pass. Even simple checks catch real drift before it compounds into agent-facing confusion.
+
+### 2026-04-06 - Experiment 004: plan vs no plan
+
+- Layer: D
+- Hypothesis: A checked-in execution plan should improve restartability and auditability on a medium-complexity refactor, and it should reduce the chance of missing low-salience requirements.
+- Setup: Defined one shared refactor task in `experiments/004-plan-vs-no-plan/task.md`, then created two run packages under `runs/no-plan/` and `runs/with-plan/` for the same task. Implemented `verify-workspace.ps1`, `score-run-package.ps1`, and `compare-run-packages.ps1` to score both packages with the same rubric.
+- Commands or workflow: scored the no-plan package into `artifacts/no-plan-score.json`, scored the plan-driven package into `artifacts/with-plan-score.json`, then compared them in `artifacts/run-comparison.json`.
+- Result: pass. The no-plan package scored 7 / 16 and the plan-driven package scored 16 / 16. The plan-driven run improved result quality by 1 point, restartability by 4 points, and auditability by 4 points.
+- What worked: the controlled task and scoring rubric made the comparison inspectable, and the split between workspace verification and run-package scoring made it clear that plans help even when the code changes are similar.
+- What failed: this is still a controlled run-package comparison rather than a blind repeated trial with multiple agents, so it is better as structural evidence than as a performance benchmark.
+- What to change next: move on to `lint-feedback-loop/` and test whether explicit feedback loops improve output consistency on a toy codebase.
+- Reusable lesson for future host repos: for multi-step refactors, plans should be treated as executable artifacts, not optional notes. They materially improve handoff, review, and restart quality even when the final code looks similar.

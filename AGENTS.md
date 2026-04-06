@@ -2,7 +2,7 @@
 
 ## Repository purpose
 
-This repository is a small experimental lab for learning harness engineering before applying it to a larger medical/robotics upper-computer project.
+This repository is a small experimental lab for learning harness engineering before applying it to a larger host project.
 
 ## How to work here
 

@@ -14,7 +14,7 @@ The real repo keeps short maps at the top level and deeper detail in linked docu
 
 This repository exists to study harness engineering by practice.
 
-The broader aim is to transfer validated patterns into a larger medical and robotics upper-computer project.
+The broader aim is to transfer validated patterns into a larger host repository.
 
 The lab favors small experiments, written conclusions, and reusable process artifacts.
 

@@ -1,0 +1,291 @@
+{
+    "generated_at":  "2026-04-06T17:04:30.0692383+08:00",
+    "no_plan":  {
+                    "generated_at":  "2026-04-06T17:04:30.0062368+08:00",
+                    "run_root":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\004-plan-vs-no-plan\\runs\\no-plan",
+                    "result_quality":  {
+                                           "score":  6,
+                                           "max":  7,
+                                           "checks":  [
+                                                          {
+                                                              "name":  "new-script-exists",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "old-script-removed",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "generated-at-field",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "item-count-field",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "tests-updated",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "readme-updated",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "changelog-updated",
+                                                              "passed":  false
+                                                          }
+                                                      ]
+                                       },
+                    "restartability":  {
+                                           "score":  1,
+                                           "max":  5,
+                                           "checks":  [
+                                                          {
+                                                              "name":  "plan-exists",
+                                                              "passed":  false
+                                                          },
+                                                          {
+                                                              "name":  "status-recorded",
+                                                              "passed":  false
+                                                          },
+                                                          {
+                                                              "name":  "changed-work-recorded",
+                                                              "passed":  false
+                                                          },
+                                                          {
+                                                              "name":  "next-step-or-risk-recorded",
+                                                              "passed":  false
+                                                          },
+                                                          {
+                                                              "name":  "verification-status-recorded",
+                                                              "passed":  true
+                                                          }
+                                                      ]
+                                       },
+                    "auditability":  {
+                                         "score":  0,
+                                         "max":  4,
+                                         "checks":  [
+                                                        {
+                                                            "name":  "decision-log-exists",
+                                                            "passed":  false
+                                                        },
+                                                        {
+                                                            "name":  "verification-log-exists",
+                                                            "passed":  false
+                                                        },
+                                                        {
+                                                            "name":  "commands-recorded",
+                                                            "passed":  false
+                                                        },
+                                                        {
+                                                            "name":  "assumptions-recorded",
+                                                            "passed":  false
+                                                        }
+                                                    ]
+                                     },
+                    "total":  {
+                                  "score":  7,
+                                  "max":  16
+                              },
+                    "workspace_verification":  {
+                                                   "generated_at":  "2026-04-06T17:04:29.9902369+08:00",
+                                                   "workspace_root":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\004-plan-vs-no-plan\\runs\\no-plan\\workspace",
+                                                   "checks":  [
+                                                                  {
+                                                                      "name":  "new-script-exists",
+                                                                      "passed":  true,
+                                                                      "detail":  "Expected scripts/generate-report.ps1."
+                                                                  },
+                                                                  {
+                                                                      "name":  "old-script-removed",
+                                                                      "passed":  true,
+                                                                      "detail":  "Expected scripts/export-report.ps1 to be removed."
+                                                                  },
+                                                                  {
+                                                                      "name":  "generated-at-field",
+                                                                      "passed":  true,
+                                                                      "detail":  "Expected generated_at field in the new script."
+                                                                  },
+                                                                  {
+                                                                      "name":  "item-count-field",
+                                                                      "passed":  true,
+                                                                      "detail":  "Expected item_count field in the new script."
+                                                                  },
+                                                                  {
+                                                                      "name":  "tests-updated",
+                                                                      "passed":  true,
+                                                                      "detail":  "Expected tests to reference the new script and fields."
+                                                                  },
+                                                                  {
+                                                                      "name":  "readme-updated",
+                                                                      "passed":  true,
+                                                                      "detail":  "Expected README usage example to reference generate-report.ps1."
+                                                                  },
+                                                                  {
+                                                                      "name":  "changelog-updated",
+                                                                      "passed":  false,
+                                                                      "detail":  "Expected changelog entry for the refactor."
+                                                                  },
+                                                                  {
+                                                                      "name":  "tests-pass",
+                                                                      "passed":  true,
+                                                                      "detail":  "Tests passed."
+                                                                  }
+                                                              ],
+                                                   "summary":  {
+                                                                   "passed":  7,
+                                                                   "total":  8
+                                                               }
+                                               }
+                },
+    "with_plan":  {
+                      "generated_at":  "2026-04-06T17:04:30.0592392+08:00",
+                      "run_root":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\004-plan-vs-no-plan\\runs\\with-plan",
+                      "result_quality":  {
+                                             "score":  7,
+                                             "max":  7,
+                                             "checks":  [
+                                                            {
+                                                                "name":  "new-script-exists",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "old-script-removed",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "generated-at-field",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "item-count-field",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "tests-updated",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "readme-updated",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "changelog-updated",
+                                                                "passed":  true
+                                                            }
+                                                        ]
+                                         },
+                      "restartability":  {
+                                             "score":  5,
+                                             "max":  5,
+                                             "checks":  [
+                                                            {
+                                                                "name":  "plan-exists",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "status-recorded",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "changed-work-recorded",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "next-step-or-risk-recorded",
+                                                                "passed":  true
+                                                            },
+                                                            {
+                                                                "name":  "verification-status-recorded",
+                                                                "passed":  true
+                                                            }
+                                                        ]
+                                         },
+                      "auditability":  {
+                                           "score":  4,
+                                           "max":  4,
+                                           "checks":  [
+                                                          {
+                                                              "name":  "decision-log-exists",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "verification-log-exists",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "commands-recorded",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "name":  "assumptions-recorded",
+                                                              "passed":  true
+                                                          }
+                                                      ]
+                                       },
+                      "total":  {
+                                    "score":  16,
+                                    "max":  16
+                                },
+                      "workspace_verification":  {
+                                                     "generated_at":  "2026-04-06T17:04:30.0492368+08:00",
+                                                     "workspace_root":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\004-plan-vs-no-plan\\runs\\with-plan\\workspace",
+                                                     "checks":  [
+                                                                    {
+                                                                        "name":  "new-script-exists",
+                                                                        "passed":  true,
+                                                                        "detail":  "Expected scripts/generate-report.ps1."
+                                                                    },
+                                                                    {
+                                                                        "name":  "old-script-removed",
+                                                                        "passed":  true,
+                                                                        "detail":  "Expected scripts/export-report.ps1 to be removed."
+                                                                    },
+                                                                    {
+                                                                        "name":  "generated-at-field",
+                                                                        "passed":  true,
+                                                                        "detail":  "Expected generated_at field in the new script."
+                                                                    },
+                                                                    {
+                                                                        "name":  "item-count-field",
+                                                                        "passed":  true,
+                                                                        "detail":  "Expected item_count field in the new script."
+                                                                    },
+                                                                    {
+                                                                        "name":  "tests-updated",
+                                                                        "passed":  true,
+                                                                        "detail":  "Expected tests to reference the new script and fields."
+                                                                    },
+                                                                    {
+                                                                        "name":  "readme-updated",
+                                                                        "passed":  true,
+                                                                        "detail":  "Expected README usage example to reference generate-report.ps1."
+                                                                    },
+                                                                    {
+                                                                        "name":  "changelog-updated",
+                                                                        "passed":  true,
+                                                                        "detail":  "Expected changelog entry for the refactor."
+                                                                    },
+                                                                    {
+                                                                        "name":  "tests-pass",
+                                                                        "passed":  true,
+                                                                        "detail":  "Tests passed."
+                                                                    }
+                                                                ],
+                                                     "summary":  {
+                                                                     "passed":  8,
+                                                                     "total":  8
+                                                                 }
+                                                 }
+                  },
+    "deltas":  {
+                   "result_quality":  1,
+                   "restartability":  4,
+                   "auditability":  4,
+                   "total":  9
+               },
+    "verdict":  "plan-driven-run-is-easier-to-resume-and-audit",
+    "recommendation":  "Use a checked-in execution plan for multi-step refactors that may need review, restart, or handoff."
+}
