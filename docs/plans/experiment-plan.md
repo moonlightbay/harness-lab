@@ -238,8 +238,8 @@ Run the first repository-legibility experiment and define the first garbage-coll
 
 Status note:
 
-- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, and Experiment 007 were completed on 2026-04-06.
-- The next useful step is `git-workflow-patterns/` so Layer F can be tested with the same artifact-first discipline.
+- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, Experiment 007, and Experiment 008 were completed on 2026-04-06.
+- The next useful step is `multi-agent-split-task/` so Layer E can build on the new Git isolation pattern.
 
 ### Sprint 1 tasks
 

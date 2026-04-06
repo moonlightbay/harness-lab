@@ -1,0 +1,28 @@
+{
+  "base_branch": "main",
+  "nested_branch": "combined-tasks",
+  "tasks": {
+    "task_a": {
+      "branch": "task-a",
+      "workspace": "worktree-a",
+      "expected_files": [
+        "README.md",
+        "src/feature_a.py"
+      ],
+      "readme_marker": "Task A marker: alpha-export-ready",
+      "code_file": "src/feature_a.py",
+      "code_snippet": "\n\ndef alpha_export_mode() -> str:\n    return \"alpha export ready\"\n"
+    },
+    "task_b": {
+      "branch": "task-b",
+      "workspace": "worktree-b",
+      "expected_files": [
+        "README.md",
+        "src/feature_b.py"
+      ],
+      "readme_marker": "Task B marker: beta-audit-ready",
+      "code_file": "src/feature_b.py",
+      "code_snippet": "\n\ndef beta_audit_mode() -> str:\n    return \"beta audit ready\"\n"
+    }
+  }
+}

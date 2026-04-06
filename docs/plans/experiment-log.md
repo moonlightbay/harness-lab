@@ -113,3 +113,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: the task was too small to force a clear separation between generic and remediation-oriented failing checks. Static representation differences from Experiment 006 did not translate into a decisive live-run winner here.
 - What to change next: either raise task complexity or repeat the same A/B several times before drawing a stronger conclusion about live repair cost.
 - Reusable lesson for future host repos: remediation-oriented checks are still valuable, but on small bounded repairs a competent model may already recover from a generic failing check. Live benchmarks need enough task difficulty to expose the real payoff of richer feedback.
+
+### 2026-04-06 - Experiment 008: git workflow patterns
+
+- Layer: F
+- Hypothesis: When two active tasks accumulate in one dirty branch, isolation and restart clarity collapse. Branch-per-task worktrees should preserve review scope and make interruption recovery cleaner.
+- Setup: Created a small fixture repo under `experiments/008-git-workflow-patterns/fixtures/repo-template/`, then used `run-git-workflow-comparison.py` to build two scenarios from the same base commit: one nested dirty branch and one branch-per-task worktree setup. Scored both scenarios with `compare-workflow-patterns.py`.
+- Commands or workflow: generated `artifacts/nested-scenario.json` and `artifacts/worktree-scenario.json`, then compared them into `artifacts/workflow-comparison.json`.
+- Result: pass. The nested single-branch scenario scored 0 / 8, while the branch-per-task worktree scenario scored 8 / 8. The worktree pattern removed cross-task file contamination and kept README markers isolated per task.
+- What worked: using real `git worktree` commands on a toy repo made the result concrete instead of theoretical, and the marker-based README check caught contamination that file lists alone could have hidden.
+- What failed: the scorer is intentionally structural and binary, so it does not yet quantify softer tradeoffs such as branch management overhead or merge frequency.
+- What to change next: move on to a multi-agent split-task experiment that uses this branch-per-task worktree pattern as the default coordination substrate.
+- Reusable lesson for future host repos: if two tasks are active at once, give them separate branches and separate worktrees. Do not stack unrelated dirty changes in one branch and expect clean review or easy recovery.

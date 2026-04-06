@@ -1,0 +1,28 @@
+{
+  "scenario": "nested-single-branch",
+  "base_branch": "main",
+  "contexts": [
+    {
+      "context_name": "combined-workspace",
+      "branch": "combined-tasks",
+      "assigned_tasks": [
+        "task_a",
+        "task_b"
+      ],
+      "changed_files": [
+        "README.md",
+        "src/feature_a.py",
+        "src/feature_b.py"
+      ],
+      "status": [
+        "M README.md",
+        " M src/feature_a.py",
+        " M src/feature_b.py"
+      ],
+      "present_readme_markers": [
+        "task_a",
+        "task_b"
+      ]
+    }
+  ]
+}

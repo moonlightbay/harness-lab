@@ -1,0 +1,165 @@
+{
+  "nested_single_branch": {
+    "scenario": "nested-single-branch",
+    "checks": [
+      {
+        "name": "task_a-dedicated-workspace",
+        "passed": false,
+        "detail": "Expected a dedicated workspace for task_a."
+      },
+      {
+        "name": "task_a-expected-files-only",
+        "passed": false,
+        "detail": "No dedicated workspace for task_a, so file isolation failed."
+      },
+      {
+        "name": "task_a-readme-marker-isolated",
+        "passed": false,
+        "detail": "No dedicated workspace for task_a, so README isolation failed."
+      },
+      {
+        "name": "task_a-review-scope-small",
+        "passed": false,
+        "detail": "No dedicated workspace for task_a, so review scope failed."
+      },
+      {
+        "name": "task_b-dedicated-workspace",
+        "passed": false,
+        "detail": "Expected a dedicated workspace for task_b."
+      },
+      {
+        "name": "task_b-expected-files-only",
+        "passed": false,
+        "detail": "No dedicated workspace for task_b, so file isolation failed."
+      },
+      {
+        "name": "task_b-readme-marker-isolated",
+        "passed": false,
+        "detail": "No dedicated workspace for task_b, so README isolation failed."
+      },
+      {
+        "name": "task_b-review-scope-small",
+        "passed": false,
+        "detail": "No dedicated workspace for task_b, so review scope failed."
+      }
+    ],
+    "summary": {
+      "passed": 0,
+      "total": 8
+    },
+    "contexts": [
+      {
+        "context_name": "combined-workspace",
+        "branch": "combined-tasks",
+        "assigned_tasks": [
+          "task_a",
+          "task_b"
+        ],
+        "changed_files": [
+          "README.md",
+          "src/feature_a.py",
+          "src/feature_b.py"
+        ],
+        "status": [
+          "M README.md",
+          " M src/feature_a.py",
+          " M src/feature_b.py"
+        ],
+        "present_readme_markers": [
+          "task_a",
+          "task_b"
+        ]
+      }
+    ]
+  },
+  "branch_per_task_worktrees": {
+    "scenario": "branch-per-task-worktrees",
+    "checks": [
+      {
+        "name": "task_a-dedicated-workspace",
+        "passed": true,
+        "detail": "Expected a dedicated workspace for task_a."
+      },
+      {
+        "name": "task_a-expected-files-only",
+        "passed": true,
+        "detail": "Changed files: ['README.md', 'src/feature_a.py']; expected: ['README.md', 'src/feature_a.py']"
+      },
+      {
+        "name": "task_a-readme-marker-isolated",
+        "passed": true,
+        "detail": "Present README markers: ['task_a']; expected only [task_a]"
+      },
+      {
+        "name": "task_a-review-scope-small",
+        "passed": true,
+        "detail": "Review scope size: 2; expected max: 2"
+      },
+      {
+        "name": "task_b-dedicated-workspace",
+        "passed": true,
+        "detail": "Expected a dedicated workspace for task_b."
+      },
+      {
+        "name": "task_b-expected-files-only",
+        "passed": true,
+        "detail": "Changed files: ['README.md', 'src/feature_b.py']; expected: ['README.md', 'src/feature_b.py']"
+      },
+      {
+        "name": "task_b-readme-marker-isolated",
+        "passed": true,
+        "detail": "Present README markers: ['task_b']; expected only [task_b]"
+      },
+      {
+        "name": "task_b-review-scope-small",
+        "passed": true,
+        "detail": "Review scope size: 2; expected max: 2"
+      }
+    ],
+    "summary": {
+      "passed": 8,
+      "total": 8
+    },
+    "contexts": [
+      {
+        "context_name": "worktree-a",
+        "branch": "task-a",
+        "assigned_tasks": [
+          "task_a"
+        ],
+        "changed_files": [
+          "README.md",
+          "src/feature_a.py"
+        ],
+        "status": [
+          "M README.md",
+          " M src/feature_a.py"
+        ],
+        "present_readme_markers": [
+          "task_a"
+        ]
+      },
+      {
+        "context_name": "worktree-b",
+        "branch": "task-b",
+        "assigned_tasks": [
+          "task_b"
+        ],
+        "changed_files": [
+          "README.md",
+          "src/feature_b.py"
+        ],
+        "status": [
+          "M README.md",
+          " M src/feature_b.py"
+        ],
+        "present_readme_markers": [
+          "task_b"
+        ]
+      }
+    ]
+  },
+  "delta": 8,
+  "verdict": "worktree-pattern-preserves-task-isolation-better",
+  "recommendation": "Use branch-per-task worktrees when two active tasks must proceed in parallel; avoid stacking unrelated dirty changes in one branch."
+}

@@ -1,0 +1,42 @@
+{
+  "scenario": "branch-per-task-worktrees",
+  "base_branch": "main",
+  "contexts": [
+    {
+      "context_name": "worktree-a",
+      "branch": "task-a",
+      "assigned_tasks": [
+        "task_a"
+      ],
+      "changed_files": [
+        "README.md",
+        "src/feature_a.py"
+      ],
+      "status": [
+        "M README.md",
+        " M src/feature_a.py"
+      ],
+      "present_readme_markers": [
+        "task_a"
+      ]
+    },
+    {
+      "context_name": "worktree-b",
+      "branch": "task-b",
+      "assigned_tasks": [
+        "task_b"
+      ],
+      "changed_files": [
+        "README.md",
+        "src/feature_b.py"
+      ],
+      "status": [
+        "M README.md",
+        " M src/feature_b.py"
+      ],
+      "present_readme_markers": [
+        "task_b"
+      ]
+    }
+  ]
+}
