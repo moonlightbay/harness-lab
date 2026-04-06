@@ -1,0 +1,9 @@
+[
+  {
+    "id": "thin-entrypoints",
+    "description": "Entry-point layers should delegate business logic to deeper modules instead of constructing domain results directly.",
+    "detection_hint": "Search entry-point modules for report-building or normalization logic that belongs in service or domain layers.",
+    "remediation_hint": "Move business logic into a deeper module and keep the entry-point layer focused on orchestration.",
+    "rerun_hint": "python checks/check-architecture.py ."
+  }
+]

@@ -1,0 +1,70 @@
+﻿{
+  "generated_at": "2026-04-06T22:10:52.848184+08:00",
+  "template_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\012-minimal-harness-template\\template",
+  "checks": [
+    {
+      "name": "required-files-exist",
+      "passed": true,
+      "detail": "Missing files: none"
+    },
+    {
+      "name": "top-level-pack-stays-small",
+      "passed": true,
+      "detail": "Top-level word count: 220; budget: 280"
+    },
+    {
+      "name": "required-top-level-paths-covered",
+      "passed": true,
+      "detail": "Covered 4 of 4 required paths."
+    },
+    {
+      "name": "no-stale-top-level-references",
+      "passed": true,
+      "detail": "Stale references: 0"
+    },
+    {
+      "name": "no-authority-conflicts",
+      "passed": true,
+      "detail": "Authority conflicts: 0"
+    },
+    {
+      "name": "no-wrong-authority-claims",
+      "passed": true,
+      "detail": "Wrong authority topics: 0"
+    },
+    {
+      "name": "execution-plan-template-sections",
+      "passed": true,
+      "detail": "Missing sections: none"
+    },
+    {
+      "name": "git-workflow-note-covers-worktrees",
+      "passed": true,
+      "detail": "Missing git terms: none"
+    },
+    {
+      "name": "architecture-rule-hook-ready",
+      "passed": true,
+      "detail": "Valid rules: 1; invalid rules: 0"
+    },
+    {
+      "name": "migration-placeholder-doc-sections",
+      "passed": true,
+      "detail": "Missing placeholder sections: none"
+    },
+    {
+      "name": "migration-placeholder-markers-exist",
+      "passed": true,
+      "detail": "Placeholder marker missing: none"
+    }
+  ],
+  "summary": {
+    "passed": 11,
+    "total": 11,
+    "top_level_word_count": 220,
+    "guidance_verdict": "pass",
+    "architecture_verdict": "pass",
+    "placeholder_doc_count": 8
+  },
+  "verdict": "pass"
+}

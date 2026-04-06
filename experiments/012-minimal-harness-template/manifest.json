@@ -1,0 +1,127 @@
+{
+  "template_name": "migration-harness-template",
+  "source_scoreboard": "experiments/011-evaluation-harness/artifacts/evaluation-scoreboard.json",
+  "included_default_patterns": [
+    "short-top-level-map",
+    "current-singular-guidance",
+    "checked-in-execution-plan",
+    "custom-architecture-rule",
+    "branch-per-task-worktrees"
+  ],
+  "excluded_patterns": [
+    {
+      "pattern": "role-divided-workflow",
+      "tier": "conditional",
+      "reason": "Useful when audit trail matters, but too expensive for the base template."
+    },
+    {
+      "pattern": "remediation-oriented-live-feedback",
+      "tier": "needs-more-data",
+      "reason": "Keep out of the base template until the live repair benefit is clearer."
+    }
+  ],
+  "required_files": [
+    ".gitignore",
+    "AGENTS.md",
+    "README.md",
+    "docs/knowledge/repository-overview.md",
+    "docs/knowledge/current-system.md",
+    "docs/knowledge/target-architecture.md",
+    "docs/knowledge/migration-scope.md",
+    "docs/knowledge/domain-constraints.md",
+    "docs/plans/migration-plan.md",
+    "docs/plans/migration-log.md",
+    "docs/plans/execution-plan-template.md",
+    "docs/workflows/git-workflow.md",
+    "docs/quality/architecture-rules.md",
+    "docs/quality/migration-rules.md",
+    "docs/quality/acceptance-checklist.md",
+    "checks/check-top-level-guidance.py",
+    "checks/check-architecture.py",
+    "checks/architecture-rules.json"
+  ],
+  "required_top_level_paths": [
+    "README.md",
+    "docs/knowledge/repository-overview.md",
+    "docs/plans/migration-plan.md",
+    "docs/plans/migration-log.md"
+  ],
+  "top_level_pack_files": [
+    "AGENTS.md",
+    "README.md"
+  ],
+  "top_level_word_budget": 280,
+  "required_plan_sections": [
+    "## Goal",
+    "## Scope",
+    "## Baseline",
+    "## Constraints",
+    "## Allowed files",
+    "## Plan",
+    "## Verification",
+    "## Rollback",
+    "## Risks",
+    "## Status log",
+    "## Handoff"
+  ],
+  "required_git_terms": [
+    "worktree",
+    "branch-per-task"
+  ],
+  "placeholder_token": "[TO_FILL]",
+  "placeholder_docs": {
+    "docs/knowledge/current-system.md": [
+      "## Purpose",
+      "## Module map",
+      "## Hotspots",
+      "## Stable interfaces"
+    ],
+    "docs/knowledge/target-architecture.md": [
+      "## Desired end state",
+      "## Layer boundaries",
+      "## Non-goals",
+      "## Open decisions"
+    ],
+    "docs/knowledge/migration-scope.md": [
+      "## In scope",
+      "## Out of scope",
+      "## Phases",
+      "## Success criteria"
+    ],
+    "docs/knowledge/domain-constraints.md": [
+      "## External constraints",
+      "## Compatibility promises",
+      "## Performance and reliability limits",
+      "## Human review checkpoints"
+    ],
+    "docs/plans/migration-plan.md": [
+      "## Goal",
+      "## Current wave",
+      "## Sequence",
+      "## Verification gates",
+      "## Blockers"
+    ],
+    "docs/plans/migration-log.md": [
+      "## Entry template"
+    ],
+    "docs/quality/migration-rules.md": [
+      "## Stable rules",
+      "## Forbidden patterns",
+      "## Review triggers",
+      "## Promotion path to automation"
+    ],
+    "docs/quality/acceptance-checklist.md": [
+      "## Functional checks",
+      "## Architecture checks",
+      "## Migration safety checks",
+      "## Rollback readiness"
+    ]
+  },
+  "required_architecture_rule_fields": [
+    "id",
+    "description",
+    "detection_hint",
+    "remediation_hint",
+    "rerun_hint"
+  ]
+}

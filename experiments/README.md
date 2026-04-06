@@ -15,7 +15,8 @@ Current experiments:
 - `009-role-based-agent-workflow/`: compares a single generalist agent with a sequential role-divided workflow and measures the auditability gain versus cost.
 - `010-stale-doc-and-duplicate-guidance/`: compares a clean short map against stale-authority and duplicate-authority top-level guidance failures.
 - `011-evaluation-harness/`: normalizes representative experiment results into one recurring scoreboard and recommendation set.
+- `012-minimal-harness-template/`: turns the default-tier patterns into a migration harness template with fill-in placeholder docs and validation hooks.
 
 Planned next experiments:
 
-- `012-minimal-harness-template/`
+- `013-template-pilot/`

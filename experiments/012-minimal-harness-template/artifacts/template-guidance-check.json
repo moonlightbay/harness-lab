@@ -1,0 +1,36 @@
+﻿{
+  "verdict": "pass",
+  "summary": {
+    "top_level_word_count": 220,
+    "required_paths_covered": 4,
+    "required_path_count": 4,
+    "stale_reference_count": 0,
+    "wrong_authority_count": 0,
+    "authority_conflict_count": 0
+  },
+  "stale_references": [],
+  "wrong_authority_topics": [],
+  "authority_conflicts": [],
+  "required_path_coverage": [
+    {
+      "path": "README.md",
+      "mentioned_in_pack": true,
+      "mention_count": 1
+    },
+    {
+      "path": "docs/knowledge/repository-overview.md",
+      "mentioned_in_pack": true,
+      "mention_count": 3
+    },
+    {
+      "path": "docs/plans/migration-plan.md",
+      "mentioned_in_pack": true,
+      "mention_count": 4
+    },
+    {
+      "path": "docs/plans/migration-log.md",
+      "mentioned_in_pack": true,
+      "mention_count": 2
+    }
+  ]
+}

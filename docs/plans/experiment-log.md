@@ -161,3 +161,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: the normalization logic is intentionally opinionated and case-specific, so it should be treated as a first evaluation harness rather than a final universal benchmark.
 - What to change next: turn the default-tier patterns into a minimal reusable harness template, then rerun this scoreboard whenever new experiments are added.
 - Reusable lesson for future host repos: once multiple harness ideas exist, evaluation should compare patterns under one recurring scoreboard. Otherwise teams will overweight the freshest anecdote instead of the strongest evidence.
+
+### 2026-04-06 - Experiment 012: migration harness template
+
+- Layer: synthesis after A-H
+- Hypothesis: The default-tier patterns from Experiment 011 are compact enough to fit inside one small reusable migration scaffold, and a validator can prove that the scaffold stays current, singular, and structurally ready before repo-specific migration docs are fully filled in.
+- Setup: Created `experiments/012-minimal-harness-template/template/` as a reusable migration repo starter, defined the included and excluded modules in `manifest.json`, then implemented `validate-template.py` plus two reusable template hooks: `checks/check-top-level-guidance.py` and `checks/check-architecture.py`. Added placeholder docs for current state, target state, migration scope, domain constraints, migration rules, and acceptance criteria.
+- Commands or workflow: ran the top-level guidance check, the architecture hook check, and the combined validator, then wrote the outputs to `artifacts/template-guidance-check.json`, `artifacts/template-architecture-check.json`, and `artifacts/template-validation.json`.
+- Result: pass. The validator passed all 11 checks. The top-level pack stayed at 220 words, had no stale references, and had no authority conflicts, while eight placeholder migration docs were present and structurally ready to fill.
+- What worked: the template stayed small while still carrying the essential default-tier modules plus migration-specific placeholders, so the synthesis did not collapse back into a giant manual.
+- What failed: the template is intentionally generic. It proves the migration scaffold, but any real host repository will still need domain-specific architecture rules, validation commands, and completed placeholder docs before code-moving work begins.
+- What to change next: field-test this template in a fresh repo or pilot host repository and record which repo-specific pieces are always needed on top of the base scaffold.
+- Reusable lesson for future host repos: after enough experiments, the defaults should be compressed into a migration starter template. The base template should include only the low-cost, repeatedly proven patterns, plus explicit placeholder docs that force humans to spell out migration scope and constraints before large refactors begin.

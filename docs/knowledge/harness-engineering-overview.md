@@ -159,6 +159,17 @@ Implication for practice:
 - compare benefit and cost in one place
 - keep an explicit "needs more data" bucket so inconclusive wins are not promoted too early
 
+### 3.12 Synthesis should compress defaults into a small template
+
+After comparison, the next useful step is synthesis. The point is not to create a second giant manual. The point is to compress the default-tier patterns into a small reusable scaffold.
+
+Implication for practice:
+
+- keep the template smaller than the evidence base that justified it
+- include only default-tier patterns in the base template
+- keep conditional and inconclusive patterns out of the base scaffold until they are justified for a specific repo
+- add fill-in placeholder docs for migration scope, target architecture, and constraints so repo-specific rules are written down before agents start moving code
+
 ## 4. What seems directly applicable to a future host repository
 
 Most applicable:

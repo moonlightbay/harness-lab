@@ -1,0 +1,9 @@
+﻿{
+  "verdict": "pass",
+  "summary": {
+    "rule_count": 1,
+    "valid_rule_count": 1,
+    "invalid_rule_count": 0
+  },
+  "invalid_rules": []
+}
