@@ -1,0 +1,288 @@
+﻿{
+  "single_generalist": {
+    "run_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\009-role-based-agent-workflow\\runs\\single-generalist",
+    "mode": "single-generalist",
+    "product": {
+      "functional": {
+        "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\009-role-based-agent-workflow\\runs\\single-generalist\\workspace",
+        "checks": [
+          {
+            "name": "package-compiles",
+            "passed": true,
+            "detail": "Listing 'report_app'...\nListing 'tests'..."
+          },
+          {
+            "name": "unit-tests-pass",
+            "passed": true,
+            "detail": "test_cli_outputs_richer_report (test_cli_output.CliOutputTests.test_cli_outputs_richer_report) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.087s\n\nOK"
+          },
+          {
+            "name": "unique-items-field",
+            "passed": true,
+            "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+          },
+          {
+            "name": "summary-line-field",
+            "passed": true,
+            "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+          },
+          {
+            "name": "readme-updated",
+            "passed": true,
+            "detail": "README mentions unique_items and summary_line"
+          }
+        ],
+        "summary": {
+          "passed": 5,
+          "total": 5
+        }
+      },
+      "architecture": {
+        "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\009-role-based-agent-workflow\\runs\\single-generalist\\workspace",
+        "checks": [
+          {
+            "name": "normalize-items-in-domain",
+            "passed": true,
+            "detail": "Expected normalize_items in report_app/domain.py"
+          },
+          {
+            "name": "normalize-items-only-in-domain",
+            "passed": true,
+            "detail": "Found normalize_items in ['domain.py']"
+          },
+          {
+            "name": "build-report-in-service",
+            "passed": true,
+            "detail": "Expected build_report in report_app/service.py"
+          },
+          {
+            "name": "build-report-only-in-service",
+            "passed": true,
+            "detail": "Found build_report in ['service.py']"
+          },
+          {
+            "name": "service-imports-normalize-items",
+            "passed": true,
+            "detail": "Expected service.py to import normalize_items from domain.py"
+          },
+          {
+            "name": "cli-delegates-to-service",
+            "passed": true,
+            "detail": "Expected cli.py to import build_report and avoid constructing report fields directly"
+          }
+        ],
+        "summary": {
+          "passed": 6,
+          "total": 6
+        }
+      },
+      "total": {
+        "score": 11,
+        "max": 11
+      }
+    },
+    "auditability": {
+      "checks": [
+        {
+          "name": "workflow-note-exists",
+          "passed": true,
+          "detail": "Expected delivery-note.md for the single-agent workflow."
+        },
+        {
+          "name": "workflow-note-has-files-changed",
+          "passed": true,
+          "detail": "Expected Files Changed in delivery-note.md."
+        },
+        {
+          "name": "workflow-note-has-verification",
+          "passed": true,
+          "detail": "Expected Verification in delivery-note.md."
+        },
+        {
+          "name": "coordination-brief-exists",
+          "passed": false,
+          "detail": "Role-specific coordination artifact not present in the single-agent workflow."
+        },
+        {
+          "name": "coordination-brief-structured",
+          "passed": false,
+          "detail": "Role-specific coordination artifact not present in the single-agent workflow."
+        },
+        {
+          "name": "implementation-note-structured",
+          "passed": false,
+          "detail": "Role-specific implementation note not present in the single-agent workflow."
+        },
+        {
+          "name": "review-note-structured",
+          "passed": false,
+          "detail": "Role-specific review note not present in the single-agent workflow."
+        },
+        {
+          "name": "repair-note-structured",
+          "passed": false,
+          "detail": "Role-specific repair note not present in the single-agent workflow."
+        }
+      ],
+      "summary": {
+        "passed": 3,
+        "total": 8
+      }
+    },
+    "telemetry": {
+      "session_count": 1,
+      "turn_count": 1,
+      "input_tokens": 91320,
+      "cached_input_tokens": 85248,
+      "output_tokens": 2663
+    }
+  },
+  "role_based": {
+    "run_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\009-role-based-agent-workflow\\runs\\role-based",
+    "mode": "role-based",
+    "product": {
+      "functional": {
+        "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\009-role-based-agent-workflow\\runs\\role-based\\workspace",
+        "checks": [
+          {
+            "name": "package-compiles",
+            "passed": true,
+            "detail": "Listing 'report_app'...\nListing 'tests'..."
+          },
+          {
+            "name": "unit-tests-pass",
+            "passed": true,
+            "detail": "test_cli_outputs_rich_report_payload (test_cli_output.CliOutputTests.test_cli_outputs_rich_report_payload) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.086s\n\nOK"
+          },
+          {
+            "name": "unique-items-field",
+            "passed": true,
+            "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+          },
+          {
+            "name": "summary-line-field",
+            "passed": true,
+            "detail": "{\"item_count\": 4, \"items\": [\"alpha\", \"beta\", \"beta\", \"gamma\"], \"summary_line\": \"4 items across 3 unique values\", \"unique_items\": [\"alpha\", \"beta\", \"gamma\"]}"
+          },
+          {
+            "name": "readme-updated",
+            "passed": true,
+            "detail": "README mentions unique_items and summary_line"
+          }
+        ],
+        "summary": {
+          "passed": 5,
+          "total": 5
+        }
+      },
+      "architecture": {
+        "workspace_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\009-role-based-agent-workflow\\runs\\role-based\\workspace",
+        "checks": [
+          {
+            "name": "normalize-items-in-domain",
+            "passed": true,
+            "detail": "Expected normalize_items in report_app/domain.py"
+          },
+          {
+            "name": "normalize-items-only-in-domain",
+            "passed": true,
+            "detail": "Found normalize_items in ['domain.py']"
+          },
+          {
+            "name": "build-report-in-service",
+            "passed": true,
+            "detail": "Expected build_report in report_app/service.py"
+          },
+          {
+            "name": "build-report-only-in-service",
+            "passed": true,
+            "detail": "Found build_report in ['service.py']"
+          },
+          {
+            "name": "service-imports-normalize-items",
+            "passed": true,
+            "detail": "Expected service.py to import normalize_items from domain.py"
+          },
+          {
+            "name": "cli-delegates-to-service",
+            "passed": true,
+            "detail": "Expected cli.py to import build_report and avoid constructing report fields directly"
+          }
+        ],
+        "summary": {
+          "passed": 6,
+          "total": 6
+        }
+      },
+      "total": {
+        "score": 11,
+        "max": 11
+      }
+    },
+    "auditability": {
+      "checks": [
+        {
+          "name": "workflow-note-exists",
+          "passed": true,
+          "detail": "Expected coordination-brief.md for the role-based workflow."
+        },
+        {
+          "name": "coordination-brief-structured",
+          "passed": true,
+          "detail": "Expected Goal, Scope, Allowed Files, Verification, and Handoff Checklist in coordination-brief.md."
+        },
+        {
+          "name": "implementation-note-exists",
+          "passed": true,
+          "detail": "Expected implementation-note.md."
+        },
+        {
+          "name": "implementation-note-structured",
+          "passed": true,
+          "detail": "Expected Files Changed and Verification Run in implementation-note.md."
+        },
+        {
+          "name": "review-note-exists",
+          "passed": true,
+          "detail": "Expected review.md."
+        },
+        {
+          "name": "review-note-structured",
+          "passed": true,
+          "detail": "Expected status: and Verification in review.md."
+        },
+        {
+          "name": "repair-note-exists",
+          "passed": true,
+          "detail": "Expected repair-note.md."
+        },
+        {
+          "name": "repair-note-structured",
+          "passed": true,
+          "detail": "Expected Result and Verification in repair-note.md."
+        }
+      ],
+      "summary": {
+        "passed": 8,
+        "total": 8
+      }
+    },
+    "telemetry": {
+      "session_count": 4,
+      "turn_count": 4,
+      "input_tokens": 310519,
+      "cached_input_tokens": 276096,
+      "output_tokens": 9245
+    }
+  },
+  "deltas": {
+    "product_score": 0,
+    "auditability_score": 5,
+    "session_count": 3,
+    "turn_count": 3,
+    "input_tokens": 219199,
+    "output_tokens": 6582
+  },
+  "verdict": "role-division-improves-auditability-at-higher-cost",
+  "recommendation": "Use role-divided workflows when audit trail and review traceability matter more than raw token efficiency; keep a single generalist path for small low-risk tasks."
+}

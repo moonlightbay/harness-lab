@@ -125,3 +125,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: the scorer is intentionally structural and binary, so it does not yet quantify softer tradeoffs such as branch management overhead or merge frequency.
 - What to change next: move on to a multi-agent split-task experiment that uses this branch-per-task worktree pattern as the default coordination substrate.
 - Reusable lesson for future host repos: if two tasks are active at once, give them separate branches and separate worktrees. Do not stack unrelated dirty changes in one branch and expect clean review or easy recovery.
+
+### 2026-04-06 - Experiment 009: role-based agent workflow
+
+- Layer: E
+- Hypothesis: A role-divided workflow (`coordinator -> implementer -> reviewer -> repair`) should preserve product quality while producing a much stronger audit trail than a single generalist agent, at the cost of more sessions and tokens.
+- Setup: Reused the toy report task from Experiment 005, then ran two real Codex workflows under `experiments/009-role-based-agent-workflow/`: one `single-generalist` run and one `role-based` run. Added structured prompt contracts for each role and scored both runs with `score-workflow-run.py` and `compare-role-workflows.py`.
+- Commands or workflow: executed the single-agent workflow once, then executed the role-based workflow as four sequential Codex sessions (`coordinator`, `implementer`, `reviewer`, `repair`). Wrote score outputs to `artifacts/single-generalist-score.json` and `artifacts/role-based-score.json`, then compared them in `artifacts/role-workflow-comparison.json`.
+- Result: pass. Both workflows reached product score 11 / 11, but the single-agent workflow scored only 3 / 8 on auditability while the role-based workflow scored 8 / 8. The role-based workflow required 4 sessions instead of 1 and increased total input tokens by 219199.
+- What worked: the role prompts produced distinct artifacts instead of collapsing back into one generalist behavior, and the sequential session design made the handoff trail explicit and inspectable.
+- What failed: the added auditability came with a large cost increase, and on this small task the role split did not improve product quality itself.
+- What to change next: move on to a parallel split-task experiment so Layer E can test when multiple agents should work concurrently instead of sequentially.
+- Reusable lesson for future host repos: role-based multi-agent workflows are most justified when reviewability, compliance, or handoff traceability matter. For small low-risk tasks, a single generalist agent may be cheaper with no product-quality loss.

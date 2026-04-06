@@ -12,6 +12,7 @@ Current experiments:
 - `006-feedback-representation-loop/`: compares four ways of expressing the same architecture failure and scores which one is most loop-ready for agent repair.
 - `007-live-repair-ab/`: runs two real Codex repair loops against the same broken workspace and compares generic versus remediation-oriented architecture feedback.
 - `008-git-workflow-patterns/`: compares nested dirty changes in one branch with branch-per-task worktrees using a real Git fixture and isolation scorer.
+- `009-role-based-agent-workflow/`: compares a single generalist agent with a sequential role-divided workflow and measures the auditability gain versus cost.
 
 Planned next experiments:
 

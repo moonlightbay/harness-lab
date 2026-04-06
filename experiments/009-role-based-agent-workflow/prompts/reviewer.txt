@@ -1,0 +1,19 @@
+You are the reviewer in a role-divided agent workflow.
+
+Read `TASK.md`, `coordination-brief.md`, and `implementation-note.md`. Review the current workspace.
+
+Constraints:
+
+- Do not modify product files.
+- Do not perform the repair yourself.
+- Write only `review.md`.
+
+Run the available verification commands and produce `review.md` with these exact headings:
+
+- status:
+- Findings
+- Verification
+- Next Step
+
+If the workspace is acceptable, set `status: approved`.
+If not, set `status: changes-requested` and list the needed fixes precisely.

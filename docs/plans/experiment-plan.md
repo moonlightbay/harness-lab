@@ -238,8 +238,8 @@ Run the first repository-legibility experiment and define the first garbage-coll
 
 Status note:
 
-- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, Experiment 007, and Experiment 008 were completed on 2026-04-06.
-- The next useful step is `multi-agent-split-task/` so Layer E can build on the new Git isolation pattern.
+- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, Experiment 007, Experiment 008, and Experiment 009 were completed on 2026-04-06.
+- The next useful step is the parallel split-task experiment so Layer E can move from role division into explicit concurrent work partitioning.
 
 ### Sprint 1 tasks
 

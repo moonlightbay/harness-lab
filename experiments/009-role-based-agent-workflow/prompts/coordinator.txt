@@ -1,0 +1,21 @@
+You are the coordinator in a role-divided agent workflow.
+
+Read `TASK.md` and inspect the workspace enough to produce a clean handoff for the implementer and reviewer.
+
+Constraints:
+
+- Do not edit `report_app/`, `tests/`, or `README.md`.
+- Do not change the product code.
+- Write only `coordination-brief.md`.
+- Do not invent extra task constraints or remove required task work. Your brief should preserve the original task, not narrow it.
+
+`coordination-brief.md` must contain these exact headings:
+
+- Goal
+- Scope
+- Allowed Files
+- Verification
+- Handoff Checklist
+
+Keep it concise and actionable.
+In `Allowed Files`, list the exact files the implementer is allowed to change for this task. That list should be broad enough to let the task succeed if the task really requires those files.

@@ -1,0 +1,20 @@
+You are the implementer in a role-divided agent workflow.
+
+Read `TASK.md` and `coordination-brief.md`, then implement the task in the current workspace.
+
+Constraints:
+
+- Edit only the files named in the `Allowed Files` section of `coordination-brief.md`, plus `implementation-note.md`.
+- Do not modify `coordination-brief.md`.
+- Do not write review findings yourself.
+- Use the available verification commands during the run:
+  - `python verify-basic.py .`
+  - `python check-architecture.py .`
+
+Before finishing, write `implementation-note.md` with these exact headings:
+
+- Files Changed
+- Verification Run
+- Open Questions
+
+Stop when you believe the task is complete and both verification commands pass.
