@@ -59,7 +59,7 @@ Experiments:
 Artifacts:
 
 - doc index structure
-- stale-doc failure case notes
+- stale-doc and duplicate-guidance failure case notes
 - checklist for repo legibility
 
 Success criteria:
@@ -238,8 +238,9 @@ Run the first repository-legibility experiment and define the first garbage-coll
 
 Status note:
 
-- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, Experiment 007, Experiment 008, and Experiment 009 were completed on 2026-04-06.
-- The next useful step is the parallel split-task experiment so Layer E can move from role division into explicit concurrent work partitioning.
+- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, Experiment 007, Experiment 008, Experiment 009, and Experiment 010 were completed on 2026-04-06.
+- Layer B now has evidence for both oversized-manual failure and stale-or-duplicate guidance failure.
+- The next useful step is a lightweight evaluation harness so the completed experiments can be compared under one recurring scoreboard.
 
 ### Sprint 1 tasks
 

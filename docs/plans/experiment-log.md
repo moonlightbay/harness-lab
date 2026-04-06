@@ -137,3 +137,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: the added auditability came with a large cost increase, and on this small task the role split did not improve product quality itself.
 - What to change next: move on to a parallel split-task experiment so Layer E can test when multiple agents should work concurrently instead of sequentially.
 - Reusable lesson for future host repos: role-based multi-agent workflows are most justified when reviewability, compliance, or handoff traceability matter. For small low-risk tasks, a single generalist agent may be cheaper with no product-quality loss.
+
+### 2026-04-06 - Experiment 010: stale doc and duplicate guidance
+
+- Layer: B
+- Hypothesis: Stale authority claims and duplicate source-of-truth claims can preserve raw path coverage while still degrading agent legibility. Stale authority should be worse because it sends the next navigation step to a dead file.
+- Setup: Reused the shared navigation measurement script from Experiments 001 and 002, then added two top-level fixture maps under `experiments/010-stale-doc-and-duplicate-guidance/fixtures/`. Implemented `score-legibility-pack.ps1` and `compare-legibility-packs.ps1` to score the baseline pack, the stale-doc fixture, and the duplicate-guidance fixture with the same rubric.
+- Commands or workflow: scored the baseline pack into `artifacts/baseline-pack-score.json`, scored the stale-doc fixture into `artifacts/stale-doc-pack-score.json`, scored the duplicate-guidance fixture into `artifacts/duplicate-guidance-pack-score.json`, then compared them in `artifacts/legibility-failure-comparison.json`.
+- Result: pass. All three packs preserved `4 / 4` required-path coverage, but the baseline scored `12 / 12`, the stale-doc fixture scored `6 / 12`, and the duplicate-guidance fixture scored `8 / 12`.
+- What worked: the scorer combined coverage with freshness and authority clarity, so the result showed that short context alone is not enough. Both failure fixtures were shorter than the baseline but still more misleading.
+- What failed: this is still a controlled document-fixture study rather than a repeated live agent navigation benchmark, so it measures steering-risk proxies instead of broad behavior.
+- What to change next: build a lightweight evaluation harness so the growing experiment set can be tracked under one shared scoreboard.
+- Reusable lesson for future host repos: top-level guidance must stay short, current, and singular. Dead source-of-truth links and duplicate ownership claims should be treated as garbage-collection failures even when the current docs are still mentioned somewhere else.

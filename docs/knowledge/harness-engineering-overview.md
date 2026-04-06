@@ -56,6 +56,8 @@ Implication for practice:
 - use indexes and clear document ownership
 - avoid giant instruction manuals
 - keep repo knowledge cross-linked and current
+- keep one owner per topic; duplicate "source of truth" claims create ambiguity even when every file still exists
+- treat stale top-level links as a harness failure; a short map that points to dead files is worse than a slightly longer clean map
 - store important knowledge in the repo, not in chat threads or only in people's heads
 
 ### 3.3 Plans are first-class artifacts

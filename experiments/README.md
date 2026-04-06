@@ -13,7 +13,8 @@ Current experiments:
 - `007-live-repair-ab/`: runs two real Codex repair loops against the same broken workspace and compares generic versus remediation-oriented architecture feedback.
 - `008-git-workflow-patterns/`: compares nested dirty changes in one branch with branch-per-task worktrees using a real Git fixture and isolation scorer.
 - `009-role-based-agent-workflow/`: compares a single generalist agent with a sequential role-divided workflow and measures the auditability gain versus cost.
+- `010-stale-doc-and-duplicate-guidance/`: compares a clean short map against stale-authority and duplicate-authority top-level guidance failures.
 
 Planned next experiments:
 
-- `multi-agent-split-task/`
+- `011-evaluation-harness/`

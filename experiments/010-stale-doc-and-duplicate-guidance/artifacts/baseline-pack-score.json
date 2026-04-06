@@ -1,0 +1,125 @@
+﻿{
+    "generated_at":  "2026-04-06T20:39:29.7332380+08:00",
+    "pack_name":  "baseline",
+    "relative_paths":  [
+                           "AGENTS.md",
+                           "README.md"
+                       ],
+    "score":  {
+                  "coverage_points":  4,
+                  "freshness_points":  4,
+                  "authority_points":  4,
+                  "total_points":  12,
+                  "max_points":  12
+              },
+    "summary":  {
+                    "required_paths_covered":  4,
+                    "required_path_count":  4,
+                    "words":  295,
+                    "lines":  55,
+                    "unique_stale_path_count":  0,
+                    "authority_claim_count":  0,
+                    "wrong_authority_topic_count":  0,
+                    "authority_conflict_topic_count":  0
+                },
+    "unique_stale_paths":  [
+
+                           ],
+    "wrong_authority_topics":  [
+
+                               ],
+    "authority_conflicts":  [
+
+                            ],
+    "finding_tags":  [
+                         "clean"
+                     ],
+    "verdict":  "clean-short-map",
+    "navigation_metrics":  {
+                               "generated_at":  "2026-04-06T20:39:29.6292667+08:00",
+                               "root_path":  "C:\\Users\\rewalk\\Desktop\\project\\harness-lab",
+                               "relative_paths":  [
+                                                      "AGENTS.md",
+                                                      "README.md"
+                                                  ],
+                               "files":  [
+                                             {
+                                                 "path":  "AGENTS.md",
+                                                 "lines":  31,
+                                                 "words":  172,
+                                                 "characters":  1248,
+                                                 "pack_line_start":  1,
+                                                 "pack_line_end":  31,
+                                                 "referenced_required_paths":  [
+                                                                                   "README.md",
+                                                                                   "docs/knowledge/harness-engineering-overview.md",
+                                                                                   "docs/plans/experiment-plan.md",
+                                                                                   "docs/plans/experiment-log.md"
+                                                                               ]
+                                             },
+                                             {
+                                                 "path":  "README.md",
+                                                 "lines":  24,
+                                                 "words":  123,
+                                                 "characters":  933,
+                                                 "pack_line_start":  32,
+                                                 "pack_line_end":  55,
+                                                 "referenced_required_paths":  [
+                                                                                   "docs/knowledge/harness-engineering-overview.md",
+                                                                                   "docs/plans/experiment-plan.md",
+                                                                                   "docs/plans/experiment-log.md"
+                                                                               ]
+                                             }
+                                         ],
+                               "summary":  {
+                                               "file_count":  2,
+                                               "lines":  55,
+                                               "words":  295,
+                                               "characters":  2181,
+                                               "required_path_count":  4,
+                                               "required_paths_covered":  4,
+                                               "required_coverage_rate":  1,
+                                               "first_required_mention_pack_line":  12,
+                                               "average_first_mention_pack_line":  14.75,
+                                               "total_required_path_mentions":  8,
+                                               "required_path_mentions_per_100_words":  2.71,
+                                               "missing_required_paths":  [
+
+                                                                          ]
+                                           },
+                               "required_path_coverage":  [
+                                                              {
+                                                                  "path":  "README.md",
+                                                                  "mentioned_in_pack":  true,
+                                                                  "mention_count":  1,
+                                                                  "first_mention_file":  "AGENTS.md",
+                                                                  "first_mention_line_in_file":  17,
+                                                                  "first_mention_pack_line":  17
+                                                              },
+                                                              {
+                                                                  "path":  "docs/knowledge/harness-engineering-overview.md",
+                                                                  "mentioned_in_pack":  true,
+                                                                  "mention_count":  2,
+                                                                  "first_mention_file":  "AGENTS.md",
+                                                                  "first_mention_line_in_file":  17,
+                                                                  "first_mention_pack_line":  17
+                                                              },
+                                                              {
+                                                                  "path":  "docs/plans/experiment-plan.md",
+                                                                  "mentioned_in_pack":  true,
+                                                                  "mention_count":  3,
+                                                                  "first_mention_file":  "AGENTS.md",
+                                                                  "first_mention_line_in_file":  12,
+                                                                  "first_mention_pack_line":  12
+                                                              },
+                                                              {
+                                                                  "path":  "docs/plans/experiment-log.md",
+                                                                  "mentioned_in_pack":  true,
+                                                                  "mention_count":  2,
+                                                                  "first_mention_file":  "AGENTS.md",
+                                                                  "first_mention_line_in_file":  13,
+                                                                  "first_mention_pack_line":  13
+                                                              }
+                                                          ]
+                           }
+}
