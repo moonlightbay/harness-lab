@@ -234,8 +234,8 @@ Run the first repository-legibility experiment and define the first garbage-coll
 
 Status note:
 
-- Experiment 001, Experiment 002, Experiment 003, and Experiment 004 were completed on 2026-04-06.
-- The next useful step is `lint-feedback-loop/` so Layer C can be tested with the same artifact-first discipline.
+- Experiment 001, Experiment 002, Experiment 003, Experiment 004, and Experiment 005 were completed on 2026-04-06.
+- The next useful step is `git-workflow-patterns/` so Layer F can be tested with the same artifact-first discipline.
 
 ### Sprint 1 tasks
 

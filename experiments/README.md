@@ -8,8 +8,9 @@ Current experiments:
 - `002-big-manual-comparison/`: compares the short top-level map with an oversized single-manual variant.
 - `003-garbage-collection-pass/`: turns the cleanup checklist into a repeatable audit against dirty and clean snapshots.
 - `004-plan-vs-no-plan/`: compares no-plan and plan-driven run packages on the same refactor task.
+- `005-lint-feedback-loop/`: compares basic functional checks with a stronger feedback loop that adds a custom architecture rule.
 
 Planned next experiments:
 
-- `lint-feedback-loop/`
+- `git-workflow-patterns/`
 - `multi-agent-split-task/`

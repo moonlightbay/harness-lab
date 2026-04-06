@@ -77,3 +77,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: this is still a controlled run-package comparison rather than a blind repeated trial with multiple agents, so it is better as structural evidence than as a performance benchmark.
 - What to change next: move on to `lint-feedback-loop/` and test whether explicit feedback loops improve output consistency on a toy codebase.
 - Reusable lesson for future host repos: for multi-step refactors, plans should be treated as executable artifacts, not optional notes. They materially improve handoff, review, and restart quality even when the final code looks similar.
+
+### 2026-04-06 - Experiment 005: lint feedback loop
+
+- Layer: C
+- Hypothesis: Syntax checks and unit tests can still allow structurally poor agent output, while adding one custom architecture rule can preserve layering and reduce duplicated logic.
+- Setup: Defined one shared toy refactor task in `experiments/005-lint-feedback-loop/task.md`, then created `runs/basic-feedback/` and `runs/strong-feedback/` for the same task. Implemented `verify-basic.py`, `check-architecture.py`, `score-feedback-run.py`, and `compare-feedback-runs.py` to score both runs with the same rubric.
+- Commands or workflow: scored the basic-feedback run into `artifacts/basic-feedback-score.json`, scored the strong-feedback run into `artifacts/strong-feedback-score.json`, then compared them in `artifacts/feedback-comparison.json`.
+- Result: pass. Both runs passed all five functional checks, but the basic-feedback run scored only 3 / 6 on architecture while the strong-feedback run scored 6 / 6. Total score improved from 8 / 11 to 11 / 11.
+- What worked: the toy task isolated the failure mode cleanly. Basic feedback was enough to pass syntax and tests, but it still allowed domain logic and report-building logic to drift into `cli.py`.
+- What failed: this is still a controlled artifact comparison, not a repeated study over many tasks or models, so it demonstrates the shape of the problem rather than a population-level benchmark.
+- What to change next: move on to a Git workflow experiment and test which branch and worktree habits best support agent-heavy iteration and recovery.
+- Reusable lesson for future host repos: tests are necessary but not sufficient. A small custom structure rule can catch degradations that functional checks will happily let through.
