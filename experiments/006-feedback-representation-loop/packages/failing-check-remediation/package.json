@@ -1,0 +1,7 @@
+{
+  "name": "failing-check-remediation",
+  "origin": "automated-check-with-remediation",
+  "format": "plain-text-check-output",
+  "feedback_file": "feedback.txt",
+  "source_spec": "fixtures\\violation-spec.json"
+}

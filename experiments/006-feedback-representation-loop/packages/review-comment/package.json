@@ -1,0 +1,7 @@
+{
+  "name": "review-comment",
+  "origin": "human-review",
+  "format": "markdown-comment",
+  "feedback_file": "feedback.md",
+  "source_spec": "fixtures\\violation-spec.json"
+}

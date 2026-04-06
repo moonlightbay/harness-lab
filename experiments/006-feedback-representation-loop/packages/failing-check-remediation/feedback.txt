@@ -1,0 +1,20 @@
+Architecture check failed for the current workspace.
+
+Actual:
+- `normalize_items` found in `report_app/cli.py` and `report_app/domain.py`
+- `build_report` found in `report_app/cli.py` and `report_app/service.py`
+- report_app/cli.py constructs unique_items and summary_line directly.
+
+Expected:
+- Keep `normalize_items` only in `report_app/domain.py`
+- Keep `build_report` only in `report_app/service.py`
+- Make report_app/cli.py delegate to build_report from report_app/service.py and avoid direct field construction.
+
+Fix:
+1. Delete the duplicate `normalize_items` definition from `report_app/cli.py`.
+2. Delete the duplicate `build_report` definition from `report_app/cli.py`.
+3. Import `build_report` from `report_app/service.py` in `report_app/cli.py` and delegate there instead.
+4. Re-run `python check-architecture.py <workspace_root>` and `python -m unittest discover -s tests -v`.
+
+Pass condition:
+- All functional checks pass and the architecture check reports 6 / 6 passed.

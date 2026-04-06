@@ -1,0 +1,76 @@
+{
+  "package_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\006-feedback-representation-loop\\packages\\docs-only",
+  "metadata": {
+    "name": "docs-only",
+    "origin": "task-documentation",
+    "format": "markdown-note",
+    "feedback_file": "feedback.md",
+    "source_spec": "fixtures\\violation-spec.json"
+  },
+  "summary": {
+    "score": 3,
+    "max": 12
+  },
+  "checks": [
+    {
+      "name": "states-architecture-failure",
+      "passed": false,
+      "detail": "Mentions that the current run failed or violated an architecture expectation."
+    },
+    {
+      "name": "names-violated-symbols",
+      "passed": false,
+      "detail": "Mentions ['normalize_items', 'build_report']."
+    },
+    {
+      "name": "names-offending-file",
+      "passed": true,
+      "detail": "Mentions report_app/cli.py."
+    },
+    {
+      "name": "names-expected-files",
+      "passed": true,
+      "detail": "Mentions ['report_app/domain.py', 'report_app/service.py']."
+    },
+    {
+      "name": "fix-direction-normalize-items",
+      "passed": false,
+      "detail": "Gives a direct fix for normalize_items."
+    },
+    {
+      "name": "fix-direction-build-report",
+      "passed": false,
+      "detail": "Gives a direct fix for build_report."
+    },
+    {
+      "name": "cli-should-delegate",
+      "passed": true,
+      "detail": "Restates that cli.py should delegate instead of constructing report fields directly."
+    },
+    {
+      "name": "includes-rerun-command",
+      "passed": false,
+      "detail": "Includes one of ['python -m unittest discover -s tests -v', 'python check-architecture.py <workspace_root>']."
+    },
+    {
+      "name": "uses-machine-friendly-structure",
+      "passed": false,
+      "detail": "Uses labeled sections or dense headings that a harness could preserve cleanly."
+    },
+    {
+      "name": "separates-actual-and-expected",
+      "passed": false,
+      "detail": "Separates actual state from expected state."
+    },
+    {
+      "name": "defines-pass-condition",
+      "passed": false,
+      "detail": "Defines what success looks like after the repair."
+    },
+    {
+      "name": "agent-can-act-without-translation",
+      "passed": false,
+      "detail": "Contains enough detail for an agent to attempt the repair without extra human interpretation."
+    }
+  ]
+}

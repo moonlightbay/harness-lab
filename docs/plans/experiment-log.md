@@ -87,5 +87,17 @@ Use this file to record outcomes as the lab progresses.
 - Result: pass. Both runs passed all five functional checks, but the basic-feedback run scored only 3 / 6 on architecture while the strong-feedback run scored 6 / 6. Total score improved from 8 / 11 to 11 / 11.
 - What worked: the toy task isolated the failure mode cleanly. Basic feedback was enough to pass syntax and tests, but it still allowed domain logic and report-building logic to drift into `cli.py`.
 - What failed: this is still a controlled artifact comparison, not a repeated study over many tasks or models, so it demonstrates the shape of the problem rather than a population-level benchmark.
-- What to change next: move on to a Git workflow experiment and test which branch and worktree habits best support agent-heavy iteration and recovery.
+- What to change next: compare how the same invariant behaves under requirement-only feedback, review comments, generic failing checks, and remediation-oriented failing checks before moving on to Git workflow.
 - Reusable lesson for future host repos: tests are necessary but not sufficient. A small custom structure rule can catch degradations that functional checks will happily let through.
+
+### 2026-04-06 - Experiment 006: feedback representation loop
+
+- Layer: C
+- Hypothesis: The same architecture invariant becomes far more useful to an agent when feedback includes diagnosis, remediation, and rerun instructions. Requirement-only feedback should be weakest, and remediation-oriented failing checks should be strongest.
+- Setup: Captured one shared architecture violation spec in `experiments/006-feedback-representation-loop/fixtures/violation-spec.json`, generated four feedback packages with `render-feedback-packages.py`, then scored them with `score-feedback-package.py` and `compare-feedback-packages.py`.
+- Commands or workflow: rendered `docs-only`, `review-comment`, `failing-check-generic`, and `failing-check-remediation` packages from the same violation spec, wrote per-package scores into `artifacts/*-score.json`, then compared them in `artifacts/feedback-representation-comparison.json`.
+- Result: pass. The remediation-oriented failing check scored highest for loop-readiness, the docs-only package scored lowest, and the review-comment and generic-check packages landed in the middle.
+- What worked: using one shared violation spec kept the comparison fairer than hand-writing unrelated examples, and the rubric separated diagnosis quality from repair guidance.
+- What failed: this is still a controlled representation study, not yet a repeated live agent benchmark, so it shows which feedback shapes are stronger on paper rather than measuring repair success over many real runs.
+- What to change next: move on to a Git workflow experiment, or return later with a live repeated repair-loop benchmark that uses the same four feedback shapes.
+- Reusable lesson for future host repos: stable invariants should be encoded as failing checks, and the best checks should tell an agent what failed, where it failed, how to fix it, and what to rerun next.

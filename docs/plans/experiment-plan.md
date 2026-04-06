@@ -78,6 +78,8 @@ Experiments:
 2. Ask an agent to make a change until all checks pass.
 3. Add one custom rule that encodes a style or architecture invariant.
 4. Compare outcomes with and without the custom rule.
+5. Compare requirement-only, review-comment, generic failing-check, and remediation-oriented failing-check feedback on the same violation.
+6. Score which feedback shape is most ready for an autonomous repair loop.
 
 Artifacts:
 
@@ -89,6 +91,7 @@ Success criteria:
 
 - at least one custom invariant measurably improves output consistency
 - we can state which loops belong in every future repo by default
+- we can identify which feedback representations should be automated by default
 
 ### Layer D. Plans and long-horizon execution
 
@@ -234,7 +237,7 @@ Run the first repository-legibility experiment and define the first garbage-coll
 
 Status note:
 
-- Experiment 001, Experiment 002, Experiment 003, Experiment 004, and Experiment 005 were completed on 2026-04-06.
+- Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, and Experiment 006 were completed on 2026-04-06.
 - The next useful step is `git-workflow-patterns/` so Layer F can be tested with the same artifact-first discipline.
 
 ### Sprint 1 tasks

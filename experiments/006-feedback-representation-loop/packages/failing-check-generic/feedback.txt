@@ -1,0 +1,12 @@
+Architecture check failed.
+
+- Found `normalize_items` in `report_app/cli.py` and `report_app/domain.py`.
+- Found `build_report` in `report_app/cli.py` and `report_app/service.py`.
+- `report_app/cli.py` constructs `unique_items` and `summary_line` directly.
+
+Expected boundaries:
+- `normalize_items` only in `report_app/domain.py`
+- `build_report` only in `report_app/service.py`
+- `report_app/cli.py` delegates to the service layer
+
+3 of 6 architecture checks failed.

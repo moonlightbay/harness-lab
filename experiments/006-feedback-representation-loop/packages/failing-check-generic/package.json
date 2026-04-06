@@ -1,0 +1,7 @@
+{
+  "name": "failing-check-generic",
+  "origin": "automated-check",
+  "format": "plain-text-check-output",
+  "feedback_file": "feedback.txt",
+  "source_spec": "fixtures\\violation-spec.json"
+}

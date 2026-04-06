@@ -77,6 +77,7 @@ Implication for practice:
 - improve observability and reproducibility
 - prefer fast verification loops
 - encode repeated review feedback into docs or automation
+- prefer feedback that states the failing boundary, the offending location, the fix direction, and the rerun command
 
 ### 3.5 The runtime harness is more than the model loop
 
@@ -113,6 +114,7 @@ Implication for practice:
 - restrict dependency directions
 - add structural tests and custom lints
 - promote recurring review comments into enforceable rules
+- make failing checks remediation-oriented so agents can repair instead of only observing a red status
 
 ### 3.8 Multi-agent work requires isolation and orchestration
 

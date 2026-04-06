@@ -1,0 +1,7 @@
+{
+  "name": "docs-only",
+  "origin": "task-documentation",
+  "format": "markdown-note",
+  "feedback_file": "feedback.md",
+  "source_spec": "fixtures\\violation-spec.json"
+}

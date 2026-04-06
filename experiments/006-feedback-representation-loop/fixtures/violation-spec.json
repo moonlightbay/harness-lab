@@ -1,0 +1,47 @@
+{
+  "task_name": "Add unique_items and summary_line to CLI output",
+  "source_run": "../005-lint-feedback-loop/runs/basic-feedback",
+  "required_symbols": [
+    "normalize_items",
+    "build_report"
+  ],
+  "offending_file": "report_app/cli.py",
+  "expected_files": [
+    "report_app/domain.py",
+    "report_app/service.py"
+  ],
+  "violations": [
+    {
+      "kind": "duplicate-function",
+      "symbol": "normalize_items",
+      "actual_files": [
+        "report_app/cli.py",
+        "report_app/domain.py"
+      ],
+      "expected_file": "report_app/domain.py",
+      "remediation": "Delete the duplicate normalize_items definition from report_app/cli.py and keep normalize_items only in report_app/domain.py."
+    },
+    {
+      "kind": "duplicate-function",
+      "symbol": "build_report",
+      "actual_files": [
+        "report_app/cli.py",
+        "report_app/service.py"
+      ],
+      "expected_file": "report_app/service.py",
+      "remediation": "Delete the duplicate build_report definition from report_app/cli.py and keep build_report only in report_app/service.py."
+    },
+    {
+      "kind": "cli-boundary",
+      "file": "report_app/cli.py",
+      "actual_behavior": "report_app/cli.py constructs unique_items and summary_line directly.",
+      "expected_behavior": "Make report_app/cli.py delegate to build_report from report_app/service.py and avoid direct field construction.",
+      "remediation": "Import build_report from report_app/service.py in report_app/cli.py and delegate to it instead of constructing report fields directly."
+    }
+  ],
+  "verification_commands": [
+    "python -m unittest discover -s tests -v",
+    "python check-architecture.py <workspace_root>"
+  ],
+  "pass_condition": "All functional checks pass and the architecture check reports 6 / 6 passed."
+}
