@@ -1,0 +1,11 @@
+﻿# Ignore local experiment clutter
+
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+.dist/
+build/
+.codex/
+.idea/
+.vscode/
