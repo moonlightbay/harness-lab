@@ -1,5 +1,5 @@
 ﻿{
-  "generated_at": "2026-04-06T22:10:52.848184+08:00",
+  "generated_at": "2026-04-08T21:44:59.670966+08:00",
   "template_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\012-minimal-harness-template\\template",
   "checks": [
     {
@@ -10,12 +10,12 @@
     {
       "name": "top-level-pack-stays-small",
       "passed": true,
-      "detail": "Top-level word count: 220; budget: 280"
+      "detail": "Top-level word count: 287; budget: 320"
     },
     {
       "name": "required-top-level-paths-covered",
       "passed": true,
-      "detail": "Covered 4 of 4 required paths."
+      "detail": "Covered 6 of 6 required paths."
     },
     {
       "name": "no-stale-top-level-references",
@@ -43,28 +43,53 @@
       "detail": "Missing git terms: none"
     },
     {
+      "name": "execution-loop-covers-core-cycle",
+      "passed": true,
+      "detail": "Missing execution loop terms: none"
+    },
+    {
+      "name": "quality-gates-cover-closeout",
+      "passed": true,
+      "detail": "Missing quality gate terms: none"
+    },
+    {
+      "name": "legacy-code-policy-covers-classification",
+      "passed": true,
+      "detail": "Missing legacy policy terms: none"
+    },
+    {
+      "name": "upstream-sync-covers-translation",
+      "passed": true,
+      "detail": "Missing upstream sync terms: none"
+    },
+    {
+      "name": "harness-improvement-covers-rules-checks-skills",
+      "passed": true,
+      "detail": "Missing harness improvement terms: none"
+    },
+    {
       "name": "architecture-rule-hook-ready",
       "passed": true,
       "detail": "Valid rules: 1; invalid rules: 0"
     },
     {
-      "name": "migration-placeholder-doc-sections",
+      "name": "placeholder-doc-sections",
       "passed": true,
       "detail": "Missing placeholder sections: none"
     },
     {
-      "name": "migration-placeholder-markers-exist",
+      "name": "placeholder-markers-exist",
       "passed": true,
       "detail": "Placeholder marker missing: none"
     }
   ],
   "summary": {
-    "passed": 11,
-    "total": 11,
-    "top_level_word_count": 220,
+    "passed": 16,
+    "total": 16,
+    "top_level_word_count": 287,
     "guidance_verdict": "pass",
     "architecture_verdict": "pass",
-    "placeholder_doc_count": 8
+    "placeholder_doc_count": 11
   },
   "verdict": "pass"
 }

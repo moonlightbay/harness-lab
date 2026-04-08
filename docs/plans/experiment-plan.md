@@ -1,6 +1,6 @@
 # Harness-Lab Experiment Plan
 
-Last updated: 2026-04-06
+Last updated: 2026-04-08
 Status: active
 
 ## Goal
@@ -241,8 +241,9 @@ Status note:
 - Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, Experiment 007, Experiment 008, Experiment 009, Experiment 010, Experiment 011, and Experiment 012 were completed on 2026-04-06.
 - Layer B now has evidence for both oversized-manual failure and stale-or-duplicate guidance failure.
 - Layer G now has a lightweight recurring scoreboard that ranks patterns by outcome gain, steering gain, reproducibility, and cost.
-- A migration-ready reusable harness template now exists for the default-tier patterns, including fill-in placeholder docs for repository-specific migration context.
-- The next useful step is a small pilot that applies the template to a future host repository or a fresh toy repo and records what still feels missing.
+- Experiment 012 was refined again on 2026-04-08 after two days of use in another project.
+- A generic reusable harness template now exists with state compression, next-action control, wave execution, quality gates, cadence review, upstream sync handling, and harness-improvement hooks.
+- The next useful step is a cross-agent template pilot that checks whether the same scaffold stays effective across different model agents or agent styles.
 
 ### Sprint 1 tasks
 

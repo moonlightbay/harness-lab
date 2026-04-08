@@ -1,14 +1,14 @@
-# Experiment 012 - Migration Harness Template
+# Experiment 012 - Generic Harness Template
 
-Last updated: 2026-04-06
+Last updated: 2026-04-08
 
 ## Goal
 
-Turn the default-tier patterns from Experiment 011 into one reusable migration harness template, then validate that the template stays small, current, and structurally ready for guided refactors in another repository.
+Turn the default-tier patterns from Experiment 011, plus the field-tested principles from a real host project, into one reusable generic harness template that any model agent can pick up without long chat history.
 
 ## Hypothesis
 
-If the highest-value harness patterns are mostly low-cost structural rules, they should fit inside a small reusable migration scaffold instead of requiring a large framework. A validator should be able to prove that the scaffold includes the essential pieces, plus the key migration placeholder docs, without drifting into a giant manual.
+If the highest-value harness patterns are mostly low-cost structural rules, they should fit inside a small reusable scaffold instead of requiring a large framework. A validator should be able to prove that the scaffold includes the essential pieces for state compression, next-action control, wave execution, quality gates, cadence, entropy management, and harness self-improvement.
 
 ## Setup
 
@@ -17,22 +17,18 @@ If the highest-value harness patterns are mostly low-cost structural rules, they
 - Template root: `template/`
 - Template validator: `validate-template.py`
 
-The template includes only the default-tier patterns:
+The template includes the default-tier patterns plus the field-proven control mechanisms:
 
 - short top-level map
 - current singular top-level guidance
-- checked-in execution and migration plan templates
+- checked-in execution plan template
 - custom architecture rule hook
 - branch-per-task worktree guidance
-
-The template also adds migration-specific placeholder docs that the target repository owner must fill before large refactors start:
-
-- current system inventory
-- target architecture
-- migration scope
-- domain constraints
-- migration rules
-- acceptance checklist
+- `agent-state` + `next-action`
+- fixed per-wave execution loop
+- five-commit review cadence
+- upstream sync as a translation task
+- harness self-improvement via rules, checks, and skills
 
 Excluded from the base template:
 
@@ -47,11 +43,11 @@ Excluded from the base template:
 
 ## Result
 
-Initial run on 2026-04-06: pass.
+Latest run on 2026-04-08: pass.
 
 - validator verdict: `pass`
-- total checks passed: `11 / 11`
-- top-level pack words: `220`
+- total checks passed: `16 / 16`
+- top-level pack words: `287`
 - stale references: `0`
 - authority conflicts: `0`
 
@@ -59,24 +55,34 @@ Included modules:
 
 - `AGENTS.md` + `README.md` as the short top-level map
 - `docs/knowledge/repository-overview.md`
-- `docs/knowledge/current-system.md`
-- `docs/knowledge/target-architecture.md`
-- `docs/knowledge/migration-scope.md`
-- `docs/knowledge/domain-constraints.md`
-- `docs/plans/migration-plan.md`
-- `docs/plans/migration-log.md`
+- `docs/knowledge/current-state.md`
+- `docs/knowledge/desired-state.md`
+- `docs/knowledge/work-scope.md`
+- `docs/knowledge/operating-constraints.md`
+- `docs/knowledge/boundaries-and-interfaces.md`
+- `docs/knowledge/risk-register.md`
+- `docs/state/agent-state.md`
+- `docs/state/next-action.md`
+- `docs/plans/active-plan.md`
+- `docs/plans/work-log.md`
 - `docs/plans/execution-plan-template.md`
+- `docs/workflows/execution-loop.md`
 - `docs/workflows/git-workflow.md`
-- `docs/quality/migration-rules.md`
-- `docs/quality/acceptance-checklist.md`
+- `docs/workflows/upstream-sync.md`
+- `docs/workflows/harness-improvement.md`
+- `docs/quality/working-rules.md`
+- `docs/quality/quality-gates.md`
+- `docs/quality/legacy-code-policy.md`
 - `checks/check-top-level-guidance.py`
 - `checks/check-architecture.py`
 - `checks/architecture-rules.json`
+- `skills/README.md`
 
 Interpretation:
 
 - The default-tier harness patterns can be compressed into a small scaffold without losing clarity.
-- The resulting template is not a framework. It is a migration-ready repo starter plus two validation hooks and a set of explicit placeholder docs.
-- This gives the lab a concrete migration artifact instead of only a recommendation list.
+- The resulting template is not tied to migration-only work. It can support refactors, feature work, cleanup, stabilization, and migration.
+- The `agent-state` and `next-action` pair is now first-class, which makes handoff and resume much cheaper across agents and conversations.
+- This gives the lab a concrete generic harness artifact instead of only a recommendation list.
 
-See `artifacts/template-validation.json`, `artifacts/template-guidance-check.json`, `artifacts/template-architecture-check.json`, and `artifacts/run-2026-04-06.md`.
+See `artifacts/template-validation.json`, `artifacts/template-guidance-check.json`, `artifacts/template-architecture-check.json`, and `artifacts/run-2026-04-08.md`.

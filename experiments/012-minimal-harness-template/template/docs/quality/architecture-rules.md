@@ -15,7 +15,7 @@ Each rule should answer:
 
 See `checks/architecture-rules.json` and `checks/check-architecture.py`.
 
-## Related migration docs
+## Related docs
 
-- `docs/quality/migration-rules.md`
-- `docs/quality/acceptance-checklist.md`
+- `docs/quality/working-rules.md`
+- `docs/quality/quality-gates.md`

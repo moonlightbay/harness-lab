@@ -20,6 +20,10 @@ Record technical, product, or safety constraints.
 
 List the files or directories that this wave is allowed to change.
 
+## Stop conditions
+
+State when the wave must stop even if more work is possible.
+
 ## Plan
 
 1. Step one

@@ -1,5 +1,5 @@
 {
-  "template_name": "migration-harness-template",
+  "template_name": "generic-harness-template",
   "source_scoreboard": "experiments/011-evaluation-harness/artifacts/evaluation-scoreboard.json",
   "included_default_patterns": [
     "short-top-level-map",
@@ -25,38 +25,50 @@
     "AGENTS.md",
     "README.md",
     "docs/knowledge/repository-overview.md",
-    "docs/knowledge/current-system.md",
-    "docs/knowledge/target-architecture.md",
-    "docs/knowledge/migration-scope.md",
-    "docs/knowledge/domain-constraints.md",
-    "docs/plans/migration-plan.md",
-    "docs/plans/migration-log.md",
+    "docs/knowledge/current-state.md",
+    "docs/knowledge/desired-state.md",
+    "docs/knowledge/work-scope.md",
+    "docs/knowledge/operating-constraints.md",
+    "docs/knowledge/boundaries-and-interfaces.md",
+    "docs/knowledge/risk-register.md",
+    "docs/state/agent-state.md",
+    "docs/state/next-action.md",
+    "docs/plans/active-plan.md",
+    "docs/plans/work-log.md",
     "docs/plans/execution-plan-template.md",
     "docs/workflows/git-workflow.md",
+    "docs/workflows/execution-loop.md",
+    "docs/workflows/upstream-sync.md",
+    "docs/workflows/harness-improvement.md",
     "docs/quality/architecture-rules.md",
-    "docs/quality/migration-rules.md",
-    "docs/quality/acceptance-checklist.md",
+    "docs/quality/working-rules.md",
+    "docs/quality/quality-gates.md",
+    "docs/quality/legacy-code-policy.md",
     "checks/check-top-level-guidance.py",
     "checks/check-architecture.py",
-    "checks/architecture-rules.json"
+    "checks/architecture-rules.json",
+    "skills/README.md"
   ],
   "required_top_level_paths": [
     "README.md",
     "docs/knowledge/repository-overview.md",
-    "docs/plans/migration-plan.md",
-    "docs/plans/migration-log.md"
+    "docs/state/agent-state.md",
+    "docs/state/next-action.md",
+    "docs/plans/active-plan.md",
+    "docs/plans/work-log.md"
   ],
   "top_level_pack_files": [
     "AGENTS.md",
     "README.md"
   ],
-  "top_level_word_budget": 280,
+  "top_level_word_budget": 320,
   "required_plan_sections": [
     "## Goal",
     "## Scope",
     "## Baseline",
     "## Constraints",
     "## Allowed files",
+    "## Stop conditions",
     "## Plan",
     "## Verification",
     "## Rollback",
@@ -66,55 +78,108 @@
   ],
   "required_git_terms": [
     "worktree",
-    "branch-per-task"
+    "branch-per-task",
+    "5 commits"
+  ],
+  "required_execution_loop_terms": [
+    "smallest useful context",
+    "wave",
+    "diff review",
+    "verification",
+    "work log",
+    "local commit"
+  ],
+  "required_quality_gate_terms": [
+    "diff review",
+    "checks",
+    "verification",
+    "work log",
+    "local commit"
+  ],
+  "required_legacy_policy_terms": [
+    "isolate",
+    "keep",
+    "deprecate",
+    "clean"
+  ],
+  "required_upstream_sync_terms": [
+    "translation task",
+    "mainline",
+    "do not mix"
+  ],
+  "required_harness_improvement_terms": [
+    "rule",
+    "check",
+    "skill"
   ],
   "placeholder_token": "[TO_FILL]",
   "placeholder_docs": {
-    "docs/knowledge/current-system.md": [
+    "docs/knowledge/current-state.md": [
       "## Purpose",
-      "## Module map",
-      "## Hotspots",
-      "## Stable interfaces"
+      "## Current modules",
+      "## Known hotspots",
+      "## Stable behavior"
     ],
-    "docs/knowledge/target-architecture.md": [
-      "## Desired end state",
-      "## Layer boundaries",
+    "docs/knowledge/desired-state.md": [
+      "## Desired outcomes",
+      "## Target shape",
       "## Non-goals",
       "## Open decisions"
     ],
-    "docs/knowledge/migration-scope.md": [
+    "docs/knowledge/work-scope.md": [
       "## In scope",
       "## Out of scope",
-      "## Phases",
-      "## Success criteria"
+      "## Waves",
+      "## Done definition"
     ],
-    "docs/knowledge/domain-constraints.md": [
+    "docs/knowledge/operating-constraints.md": [
       "## External constraints",
       "## Compatibility promises",
       "## Performance and reliability limits",
       "## Human review checkpoints"
     ],
-    "docs/plans/migration-plan.md": [
+    "docs/knowledge/boundaries-and-interfaces.md": [
+      "## Layer boundaries",
+      "## Stable interfaces",
+      "## Ownership map",
+      "## Violation triggers"
+    ],
+    "docs/knowledge/risk-register.md": [
+      "## Known risks",
+      "## Risk owners",
+      "## Mitigations",
+      "## Escalation conditions"
+    ],
+    "docs/state/agent-state.md": [
+      "## Current objective",
+      "## Current wave",
+      "## Allowed files",
+      "## Validation status",
+      "## Open risks",
+      "## Compressed context"
+    ],
+    "docs/state/next-action.md": [
+      "## Single next action",
+      "## Inputs",
+      "## Stop condition",
+      "## Verification",
+      "## Handoff if blocked"
+    ],
+    "docs/plans/active-plan.md": [
       "## Goal",
       "## Current wave",
-      "## Sequence",
-      "## Verification gates",
+      "## Queue",
+      "## Review cadence",
       "## Blockers"
     ],
-    "docs/plans/migration-log.md": [
+    "docs/plans/work-log.md": [
       "## Entry template"
     ],
-    "docs/quality/migration-rules.md": [
+    "docs/quality/working-rules.md": [
       "## Stable rules",
       "## Forbidden patterns",
       "## Review triggers",
       "## Promotion path to automation"
-    ],
-    "docs/quality/acceptance-checklist.md": [
-      "## Functional checks",
-      "## Architecture checks",
-      "## Migration safety checks",
-      "## Rollback readiness"
     ]
   },
   "required_architecture_rule_fields": [

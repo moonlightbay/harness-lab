@@ -10,13 +10,17 @@ PACK_FILES = ["AGENTS.md", "README.md"]
 REQUIRED_PATHS = [
     "README.md",
     "docs/knowledge/repository-overview.md",
-    "docs/plans/migration-plan.md",
-    "docs/plans/migration-log.md",
+    "docs/state/agent-state.md",
+    "docs/state/next-action.md",
+    "docs/plans/active-plan.md",
+    "docs/plans/work-log.md",
 ]
 CANONICAL_AUTHORITY = {
     "repository overview": "docs/knowledge/repository-overview.md",
-    "active migration roadmap": "docs/plans/migration-plan.md",
-    "migration log": "docs/plans/migration-log.md",
+    "current agent state": "docs/state/agent-state.md",
+    "next action queue": "docs/state/next-action.md",
+    "active plan": "docs/plans/active-plan.md",
+    "work log": "docs/plans/work-log.md",
 }
 
 

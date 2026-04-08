@@ -30,6 +30,10 @@ def run_json_command(command: list[str]) -> dict:
     return json.loads(completed.stdout)
 
 
+def read_lower(relative_path: str) -> str:
+    return (TEMPLATE_ROOT / relative_path).read_text(encoding="utf-8").lower()
+
+
 def main() -> None:
     checks = []
 
@@ -95,6 +99,76 @@ def main() -> None:
         "Missing git terms: none" if not missing_git_terms else f"Missing git terms: {missing_git_terms}",
     )
 
+    execution_loop_text = read_lower("docs/workflows/execution-loop.md")
+    missing_execution_loop_terms = [
+        term for term in MANIFEST["required_execution_loop_terms"] if term.lower() not in execution_loop_text
+    ]
+    add_check(
+        "execution-loop-covers-core-cycle",
+        not missing_execution_loop_terms,
+        (
+            "Missing execution loop terms: none"
+            if not missing_execution_loop_terms
+            else f"Missing execution loop terms: {missing_execution_loop_terms}"
+        ),
+    )
+
+    quality_gate_text = read_lower("docs/quality/quality-gates.md")
+    missing_quality_gate_terms = [
+        term for term in MANIFEST["required_quality_gate_terms"] if term.lower() not in quality_gate_text
+    ]
+    add_check(
+        "quality-gates-cover-closeout",
+        not missing_quality_gate_terms,
+        (
+            "Missing quality gate terms: none"
+            if not missing_quality_gate_terms
+            else f"Missing quality gate terms: {missing_quality_gate_terms}"
+        ),
+    )
+
+    legacy_policy_text = read_lower("docs/quality/legacy-code-policy.md")
+    missing_legacy_terms = [
+        term for term in MANIFEST["required_legacy_policy_terms"] if term.lower() not in legacy_policy_text
+    ]
+    add_check(
+        "legacy-code-policy-covers-classification",
+        not missing_legacy_terms,
+        (
+            "Missing legacy policy terms: none"
+            if not missing_legacy_terms
+            else f"Missing legacy policy terms: {missing_legacy_terms}"
+        ),
+    )
+
+    upstream_sync_text = read_lower("docs/workflows/upstream-sync.md")
+    missing_upstream_terms = [
+        term for term in MANIFEST["required_upstream_sync_terms"] if term.lower() not in upstream_sync_text
+    ]
+    add_check(
+        "upstream-sync-covers-translation",
+        not missing_upstream_terms,
+        (
+            "Missing upstream sync terms: none"
+            if not missing_upstream_terms
+            else f"Missing upstream sync terms: {missing_upstream_terms}"
+        ),
+    )
+
+    harness_improvement_text = read_lower("docs/workflows/harness-improvement.md")
+    missing_improvement_terms = [
+        term for term in MANIFEST["required_harness_improvement_terms"] if term.lower() not in harness_improvement_text
+    ]
+    add_check(
+        "harness-improvement-covers-rules-checks-skills",
+        not missing_improvement_terms,
+        (
+            "Missing harness improvement terms: none"
+            if not missing_improvement_terms
+            else f"Missing harness improvement terms: {missing_improvement_terms}"
+        ),
+    )
+
     architecture_result = run_json_command([sys.executable, "checks/check-architecture.py", "."])
     add_check(
         "architecture-rule-hook-ready",
@@ -119,7 +193,7 @@ def main() -> None:
             docs_without_placeholder_token.append(relative_path)
 
     add_check(
-        "migration-placeholder-doc-sections",
+        "placeholder-doc-sections",
         not missing_placeholder_sections,
         (
             "Missing placeholder sections: none"
@@ -128,7 +202,7 @@ def main() -> None:
         ),
     )
     add_check(
-        "migration-placeholder-markers-exist",
+        "placeholder-markers-exist",
         not docs_without_placeholder_token,
         (
             "Placeholder marker missing: none"

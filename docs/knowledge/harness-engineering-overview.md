@@ -1,6 +1,6 @@
 # Harness Engineering Overview
 
-Last updated: 2026-04-06
+Last updated: 2026-04-08
 
 ## 1. Working definition
 
@@ -168,7 +168,38 @@ Implication for practice:
 - keep the template smaller than the evidence base that justified it
 - include only default-tier patterns in the base template
 - keep conditional and inconclusive patterns out of the base scaffold until they are justified for a specific repo
-- add fill-in placeholder docs for migration scope, target architecture, and constraints so repo-specific rules are written down before agents start moving code
+- add fill-in placeholder docs for current state, desired state, boundaries, and constraints so repo-specific rules are written down before agents start moving code
+
+### 3.13 State compression and next-action control should be first-class
+
+In real long-running work, the most useful handoff pair is a short state summary plus a single next-action queue. These solve more continuity problems than preserving a long chat transcript.
+
+Implication for practice:
+
+- keep `agent-state` short and current
+- keep `next-action` to one concrete queued step
+- treat these docs as the primary handoff surface between agents or sessions
+
+### 3.14 Waves, cadence, and upstream sync need explicit control
+
+Large work should not be one continuous push. It should run in bounded waves with clear stop conditions, verification, rollback, and periodic direction checks. Upstream changes should be translated intentionally, not mixed invisibly into ongoing work.
+
+Implication for practice:
+
+- split large work into waves or slices
+- define allowed files, stop conditions, verification, and rollback for each wave
+- pause after a fixed commit cadence for branch-level review and plan correction
+- treat upstream changes as translation tasks instead of mixing them into redesign work
+
+### 3.15 A good harness should improve itself
+
+When the same friction repeats, the harness should absorb the lesson. Static documentation is not enough; repeated work should be promoted into rules, checks, or skills.
+
+Implication for practice:
+
+- turn repeated guidance into rules
+- turn enforceable rules into checks
+- turn repeated high-frequency operations into skills
 
 ## 4. What seems directly applicable to a future host repository
 

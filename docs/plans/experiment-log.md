@@ -173,3 +173,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: the template is intentionally generic. It proves the migration scaffold, but any real host repository will still need domain-specific architecture rules, validation commands, and completed placeholder docs before code-moving work begins.
 - What to change next: field-test this template in a fresh repo or pilot host repository and record which repo-specific pieces are always needed on top of the base scaffold.
 - Reusable lesson for future host repos: after enough experiments, the defaults should be compressed into a migration starter template. The base template should include only the low-cost, repeatedly proven patterns, plus explicit placeholder docs that force humans to spell out migration scope and constraints before large refactors begin.
+
+### 2026-04-08 - Experiment 012 refinement: generic harness template
+
+- Layer: synthesis after A-H
+- Hypothesis: The template becomes more transferable if it stops presenting itself as migration-only and instead exposes the field-proven control surfaces that help any agent continue work: compressed state, next-action queue, wave boundaries, quality gates, cadence review, upstream sync handling, and harness self-improvement.
+- Setup: Refined `experiments/012-minimal-harness-template/template/` after two days of use in another project. Replaced migration-specific file names with generic ones, added `docs/state/`, added workflow docs for execution loop, upstream sync, and harness improvement, and updated `validate-template.py` plus `manifest.json` to check the new structure.
+- Commands or workflow: reran `checks/check-top-level-guidance.py`, `checks/check-architecture.py`, and `validate-template.py`, then wrote the outputs to `artifacts/template-guidance-check.json`, `artifacts/template-architecture-check.json`, and `artifacts/template-validation.json`.
+- Result: pass. The refined template passed 16 / 16 checks. The top-level pack stayed at 287 words, covered 6 / 6 required paths, and kept zero stale references and zero authority conflicts.
+- What worked: the template became more general without bloating. The added `agent-state` and `next-action` docs made the handoff surface much clearer, and the workflow docs captured cadence, upstream sync, legacy-code handling, and harness improvement without collapsing into one giant manual.
+- What failed: this is still one field-informed refinement, not yet a cross-agent benchmark. The template is better shaped for arbitrary agents, but that claim still deserves a dedicated compatibility pilot.
+- What to change next: run the same template with a second model or agent style and compare handoff quality, token cost, and drift.
+- Reusable lesson for future host repos: keep the template generic in naming, but explicit in control surfaces. A reusable harness should tell any agent where it is, what comes next, how to stop, how to verify, and how to turn repeated friction into reusable automation.

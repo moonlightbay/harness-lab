@@ -1,9 +1,9 @@
 ﻿{
   "verdict": "pass",
   "summary": {
-    "top_level_word_count": 220,
-    "required_paths_covered": 4,
-    "required_path_count": 4,
+    "top_level_word_count": 287,
+    "required_paths_covered": 6,
+    "required_path_count": 6,
     "stale_reference_count": 0,
     "wrong_authority_count": 0,
     "authority_conflict_count": 0
@@ -23,14 +23,24 @@
       "mention_count": 3
     },
     {
-      "path": "docs/plans/migration-plan.md",
+      "path": "docs/state/agent-state.md",
       "mentioned_in_pack": true,
       "mention_count": 4
     },
     {
-      "path": "docs/plans/migration-log.md",
+      "path": "docs/state/next-action.md",
       "mentioned_in_pack": true,
-      "mention_count": 2
+      "mention_count": 4
+    },
+    {
+      "path": "docs/plans/active-plan.md",
+      "mentioned_in_pack": true,
+      "mention_count": 3
+    },
+    {
+      "path": "docs/plans/work-log.md",
+      "mentioned_in_pack": true,
+      "mention_count": 1
     }
   ]
 }
