@@ -185,3 +185,15 @@ Use this file to record outcomes as the lab progresses.
 - What failed: this is still one field-informed refinement, not yet a cross-agent benchmark. The template is better shaped for arbitrary agents, but that claim still deserves a dedicated compatibility pilot.
 - What to change next: run the same template with a second model or agent style and compare handoff quality, token cost, and drift.
 - Reusable lesson for future host repos: keep the template generic in naming, but explicit in control surfaces. A reusable harness should tell any agent where it is, what comes next, how to stop, how to verify, and how to turn repeated friction into reusable automation.
+
+### 2026-04-09 - Experiment 013: model training harness template
+
+- Layer: synthesis after A-H, applied to the training domain
+- Hypothesis: A training repository does not need a heavy autonomous runtime to benefit from harness engineering. A small docs-first scaffold with brief, state, next action, plan, run log, and rules should be enough for most agent-assisted training work.
+- Setup: Cloned `auto-deep-researcher-24x7` as a reference project, extracted the reusable control ideas, then created `experiments/013-model-training-harness-template/template/` with a training brief, evaluation protocol, compute-and-ops note, run log, and training-rule checks.
+- Commands or workflow: inspected the reference repo, wrote the new template and validator, ran `checks/check-top-level-guidance.py`, ran `checks/check-training-rules.py`, ran `validate-template.py`, then removed the temporary cloned reference repo.
+- Result: pass. The template passed 13 / 13 checks, kept the top-level pack at 289 words, and preserved zero stale references and zero authority conflicts.
+- What worked: the reference repo contributed the right abstractions to borrow: stable brief, rolling state, cheap recurring loop, and human override. Converting those into docs and checks kept the final template general and lightweight.
+- What failed: the template does not attempt to encode runtime orchestration, GPU monitoring, or experiment scheduling. That is intentional, but any project wanting full 24/7 autonomy will still need a separate runtime layer.
+- What to change next: test the training template in a fresh training repo with a different model agent, then decide whether any additional rule hooks or log schemas should move into the default scaffold.
+- Reusable lesson for future host repos: when adapting a harness pattern from a concrete agent system, copy the control surfaces, not the whole runtime. For training work, the most transferable pieces are the stable brief, compressed state, explicit next action, wave plan, run log, and a hard closeout gate.

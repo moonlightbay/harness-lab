@@ -236,3 +236,4 @@ The better path is:
 - AGENTS.md ecosystem: relevant for agent-facing repo design.
 - Open Harness: relevant for understanding portability across harness runtimes.
 - OpenHands: relevant as a broader open-source agent engineering ecosystem reference.
+- `auto-deep-researcher-24x7`: relevant for training-specific control ideas such as a stable brief, rolling memory, explicit experiment loop, and cheap monitoring, even if its runtime should not be copied wholesale into a generic repo harness.

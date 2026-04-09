@@ -16,7 +16,8 @@ Current experiments:
 - `010-stale-doc-and-duplicate-guidance/`: compares a clean short map against stale-authority and duplicate-authority top-level guidance failures.
 - `011-evaluation-harness/`: normalizes representative experiment results into one recurring scoreboard and recommendation set.
 - `012-minimal-harness-template/`: turns the default-tier patterns plus field-tested control rules into a generic harness template with state docs, workflow docs, placeholder context, and validation hooks.
+- `013-model-training-harness-template/`: adapts the generic harness into a compact model-training template with brief, evaluation protocol, run log, and training-rule hooks inspired by `auto-deep-researcher-24x7`.
 
 Planned next experiments:
 
-- `013-cross-agent-template-pilot/`
+- `014-cross-agent-template-pilot/`

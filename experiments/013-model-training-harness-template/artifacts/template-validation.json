@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-04-09T11:01:54.513322+08:00",
+  "template_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\013-model-training-harness-template\\template",
+  "checks": [
+    {
+      "name": "required-files-exist",
+      "passed": true,
+      "detail": "Missing files: none"
+    },
+    {
+      "name": "top-level-pack-stays-small",
+      "passed": true,
+      "detail": "Top-level word count: 289; budget: 300"
+    },
+    {
+      "name": "required-top-level-paths-covered",
+      "passed": true,
+      "detail": "Covered 6 of 6 required paths."
+    },
+    {
+      "name": "no-stale-top-level-references",
+      "passed": true,
+      "detail": "Stale references: 0"
+    },
+    {
+      "name": "no-authority-conflicts",
+      "passed": true,
+      "detail": "Authority conflicts: 0"
+    },
+    {
+      "name": "no-wrong-authority-claims",
+      "passed": true,
+      "detail": "Wrong authority topics: 0"
+    },
+    {
+      "name": "execution-plan-template-sections",
+      "passed": true,
+      "detail": "Missing sections: none"
+    },
+    {
+      "name": "git-and-sync-covers-worktrees-and-translation",
+      "passed": true,
+      "detail": "Missing git terms: none"
+    },
+    {
+      "name": "training-loop-covers-core-cycle",
+      "passed": true,
+      "detail": "Missing training loop terms: none"
+    },
+    {
+      "name": "quality-gates-cover-closeout",
+      "passed": true,
+      "detail": "Missing quality gate terms: none"
+    },
+    {
+      "name": "training-rule-hook-ready",
+      "passed": true,
+      "detail": "Valid rules: 2; invalid rules: 0"
+    },
+    {
+      "name": "placeholder-doc-sections",
+      "passed": true,
+      "detail": "Missing placeholder sections: none"
+    },
+    {
+      "name": "placeholder-markers-exist",
+      "passed": true,
+      "detail": "Placeholder marker missing: none"
+    }
+  ],
+  "summary": {
+    "passed": 13,
+    "total": 13,
+    "top_level_word_count": 289,
+    "guidance_verdict": "pass",
+    "training_rules_verdict": "pass",
+    "placeholder_doc_count": 8
+  },
+  "verdict": "pass"
+}
