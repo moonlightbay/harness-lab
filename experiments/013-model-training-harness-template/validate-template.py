@@ -60,104 +60,65 @@ def main() -> None:
 
     guidance_result = run_json_command([sys.executable, "checks/check-top-level-guidance.py", "."])
     add_check(
-        "required-top-level-paths-covered",
-        guidance_result["summary"]["required_paths_covered"] == guidance_result["summary"]["required_path_count"],
+        "top-level-guidance-healthy",
+        guidance_result["verdict"] == "pass",
         (
             f"Covered {guidance_result['summary']['required_paths_covered']} of "
-            f"{guidance_result['summary']['required_path_count']} required paths."
-        ),
-    )
-    add_check(
-        "no-stale-top-level-references",
-        guidance_result["summary"]["stale_reference_count"] == 0,
-        f"Stale references: {guidance_result['summary']['stale_reference_count']}",
-    )
-    add_check(
-        "no-authority-conflicts",
-        guidance_result["summary"]["authority_conflict_count"] == 0,
-        f"Authority conflicts: {guidance_result['summary']['authority_conflict_count']}",
-    )
-    add_check(
-        "no-wrong-authority-claims",
-        guidance_result["summary"]["wrong_authority_count"] == 0,
-        f"Wrong authority topics: {guidance_result['summary']['wrong_authority_count']}",
-    )
-
-    plan_text = (TEMPLATE_ROOT / "docs/plans/execution-plan-template.md").read_text(encoding="utf-8")
-    missing_plan_sections = [section for section in MANIFEST["required_plan_sections"] if section not in plan_text]
-    add_check(
-        "execution-plan-template-sections",
-        not missing_plan_sections,
-        "Missing sections: none" if not missing_plan_sections else f"Missing sections: {missing_plan_sections}",
-    )
-
-    git_text = read_lower("docs/workflows/git-and-sync.md")
-    missing_git_terms = [term for term in MANIFEST["required_git_terms"] if term.lower() not in git_text]
-    add_check(
-        "git-and-sync-covers-worktrees-and-translation",
-        not missing_git_terms,
-        "Missing git terms: none" if not missing_git_terms else f"Missing git terms: {missing_git_terms}",
-    )
-
-    training_loop_text = read_lower("docs/workflows/training-loop.md")
-    missing_training_loop_terms = [
-        term for term in MANIFEST["required_training_loop_terms"] if term.lower() not in training_loop_text
-    ]
-    add_check(
-        "training-loop-covers-core-cycle",
-        not missing_training_loop_terms,
-        (
-            "Missing training loop terms: none"
-            if not missing_training_loop_terms
-            else f"Missing training loop terms: {missing_training_loop_terms}"
+            f"{guidance_result['summary']['required_path_count']} required paths; "
+            f"stale references: {guidance_result['summary']['stale_reference_count']}; "
+            f"wrong authority topics: {guidance_result['summary']['wrong_authority_count']}; "
+            f"authority conflicts: {guidance_result['summary']['authority_conflict_count']}"
         ),
     )
 
-    quality_gate_text = read_lower("docs/quality/quality-gates.md")
-    missing_quality_gate_terms = [
-        term for term in MANIFEST["required_quality_gate_terms"] if term.lower() not in quality_gate_text
-    ]
+    project_text = (TEMPLATE_ROOT / "docs/project.md").read_text(encoding="utf-8")
+    missing_project_sections = [section for section in MANIFEST["required_project_sections"] if section not in project_text]
     add_check(
-        "quality-gates-cover-closeout",
-        not missing_quality_gate_terms,
-        (
-            "Missing quality gate terms: none"
-            if not missing_quality_gate_terms
-            else f"Missing quality gate terms: {missing_quality_gate_terms}"
-        ),
+        "project-doc-ready",
+        not missing_project_sections,
+        "Missing sections: none" if not missing_project_sections else f"Missing sections: {missing_project_sections}",
     )
 
-    rules_result = run_json_command([sys.executable, "checks/check-training-rules.py", "."])
+    log_text = (TEMPLATE_ROOT / "docs/log.md").read_text(encoding="utf-8")
+    missing_log_sections = [section for section in MANIFEST["required_log_sections"] if section not in log_text]
     add_check(
-        "training-rule-hook-ready",
-        rules_result["summary"]["valid_rule_count"] >= 1 and rules_result["summary"]["invalid_rule_count"] == 0,
-        (
-            f"Valid rules: {rules_result['summary']['valid_rule_count']}; "
-            f"invalid rules: {rules_result['summary']['invalid_rule_count']}"
-        ),
+        "log-doc-ready",
+        not missing_log_sections,
+        "Missing sections: none" if not missing_log_sections else f"Missing sections: {missing_log_sections}",
+    )
+
+    config_text = read_lower("configs/README.md")
+    missing_config_terms = [term for term in MANIFEST["required_config_terms"] if term.lower() not in config_text]
+    add_check(
+        "config-guide-ready",
+        not missing_config_terms,
+        "Missing terms: none" if not missing_config_terms else f"Missing terms: {missing_config_terms}",
+    )
+
+    src_text = read_lower("src/README.md")
+    missing_src_terms = [term for term in MANIFEST["required_src_terms"] if term.lower() not in src_text]
+    add_check(
+        "src-guide-ready",
+        not missing_src_terms,
+        "Missing terms: none" if not missing_src_terms else f"Missing terms: {missing_src_terms}",
+    )
+
+    script_text = read_lower("scripts/README.md")
+    missing_script_terms = [term for term in MANIFEST["required_script_terms"] if term.lower() not in script_text]
+    add_check(
+        "script-guide-ready",
+        not missing_script_terms,
+        "Missing terms: none" if not missing_script_terms else f"Missing terms: {missing_script_terms}",
     )
 
     placeholder_token = MANIFEST["placeholder_token"]
-    missing_placeholder_sections = {}
     docs_without_placeholder_token = []
 
-    for relative_path, required_sections in MANIFEST["placeholder_docs"].items():
+    for relative_path in MANIFEST["placeholder_docs"]:
         text = (TEMPLATE_ROOT / relative_path).read_text(encoding="utf-8")
-        missing_sections = [section for section in required_sections if section not in text]
-        if missing_sections:
-            missing_placeholder_sections[relative_path] = missing_sections
         if placeholder_token not in text:
             docs_without_placeholder_token.append(relative_path)
 
-    add_check(
-        "placeholder-doc-sections",
-        not missing_placeholder_sections,
-        (
-            "Missing placeholder sections: none"
-            if not missing_placeholder_sections
-            else f"Missing placeholder sections: {missing_placeholder_sections}"
-        ),
-    )
     add_check(
         "placeholder-markers-exist",
         not docs_without_placeholder_token,
@@ -179,7 +140,6 @@ def main() -> None:
             "total": total_count,
             "top_level_word_count": top_level_words,
             "guidance_verdict": guidance_result["verdict"],
-            "training_rules_verdict": rules_result["verdict"],
             "placeholder_doc_count": len(MANIFEST["placeholder_docs"]),
         },
         "verdict": "pass" if passed_count == total_count else "fail",

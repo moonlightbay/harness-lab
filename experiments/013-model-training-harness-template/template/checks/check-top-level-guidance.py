@@ -9,18 +9,12 @@ from pathlib import Path
 PACK_FILES = ["AGENTS.md", "README.md"]
 REQUIRED_PATHS = [
     "README.md",
-    "docs/knowledge/training-overview.md",
-    "docs/state/agent-state.md",
-    "docs/state/next-action.md",
-    "docs/plans/active-plan.md",
-    "docs/plans/run-log.md",
+    "docs/project.md",
+    "docs/log.md",
 ]
 CANONICAL_AUTHORITY = {
-    "training overview": "docs/knowledge/training-overview.md",
-    "current agent state": "docs/state/agent-state.md",
-    "next action queue": "docs/state/next-action.md",
-    "active plan": "docs/plans/active-plan.md",
-    "run log": "docs/plans/run-log.md",
+    "project context": "docs/project.md",
+    "work log": "docs/log.md",
 }
 
 

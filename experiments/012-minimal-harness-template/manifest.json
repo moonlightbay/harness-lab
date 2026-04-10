@@ -1,185 +1,94 @@
 {
-  "template_name": "generic-harness-template",
+  "template_name": "lightweight-generic-harness-template",
   "source_scoreboard": "experiments/011-evaluation-harness/artifacts/evaluation-scoreboard.json",
   "included_default_patterns": [
     "short-top-level-map",
     "current-singular-guidance",
-    "checked-in-execution-plan",
     "custom-architecture-rule",
-    "branch-per-task-worktrees"
+    "checked-in-durable-context"
   ],
   "excluded_patterns": [
     {
-      "pattern": "role-divided-workflow",
+      "pattern": "checked-in-execution-plan",
       "tier": "conditional",
-      "reason": "Useful when audit trail matters, but too expensive for the base template."
+      "reason": "Useful for longer work, but redundant for the light default when Codex already carries session flow."
     },
     {
-      "pattern": "remediation-oriented-live-feedback",
-      "tier": "needs-more-data",
-      "reason": "Keep out of the base template until the live repair benefit is clearer."
+      "pattern": "branch-per-task-worktrees",
+      "tier": "conditional",
+      "reason": "Still useful, but better kept as repo workflow advice instead of mandatory base-template structure."
     }
   ],
   "required_files": [
     ".gitignore",
     "AGENTS.md",
     "README.md",
-    "docs/knowledge/repository-overview.md",
-    "docs/knowledge/current-state.md",
-    "docs/knowledge/desired-state.md",
-    "docs/knowledge/work-scope.md",
-    "docs/knowledge/operating-constraints.md",
-    "docs/knowledge/boundaries-and-interfaces.md",
-    "docs/knowledge/risk-register.md",
-    "docs/state/agent-state.md",
-    "docs/state/next-action.md",
-    "docs/plans/active-plan.md",
-    "docs/plans/work-log.md",
-    "docs/plans/execution-plan-template.md",
-    "docs/workflows/git-workflow.md",
-    "docs/workflows/execution-loop.md",
-    "docs/workflows/upstream-sync.md",
-    "docs/workflows/harness-improvement.md",
-    "docs/quality/architecture-rules.md",
-    "docs/quality/working-rules.md",
-    "docs/quality/quality-gates.md",
-    "docs/quality/legacy-code-policy.md",
+    "docs/project.md",
+    "docs/architecture.md",
+    "docs/task.md",
+    "docs/log.md",
     "checks/check-top-level-guidance.py",
     "checks/check-architecture.py",
-    "checks/architecture-rules.json",
-    "skills/README.md"
+    "checks/architecture-rules.json"
   ],
   "required_top_level_paths": [
     "README.md",
-    "docs/knowledge/repository-overview.md",
-    "docs/state/agent-state.md",
-    "docs/state/next-action.md",
-    "docs/plans/active-plan.md",
-    "docs/plans/work-log.md"
+    "docs/project.md",
+    "docs/architecture.md",
+    "docs/task.md",
+    "docs/log.md"
   ],
   "top_level_pack_files": [
     "AGENTS.md",
     "README.md"
   ],
-  "top_level_word_budget": 320,
-  "required_plan_sections": [
-    "## Goal",
-    "## Scope",
-    "## Baseline",
+  "top_level_word_budget": 220,
+  "required_project_sections": [
+    "## Purpose",
+    "## Current shape",
     "## Constraints",
-    "## Allowed files",
-    "## Stop conditions",
-    "## Plan",
-    "## Verification",
-    "## Rollback",
-    "## Risks",
-    "## Status log",
-    "## Handoff"
+    "## Key paths"
   ],
-  "required_git_terms": [
-    "worktree",
-    "branch-per-task",
-    "5 commits"
+  "required_architecture_sections": [
+    "## Boundaries",
+    "## Stable interfaces",
+    "## Risk hotspots",
+    "## Rule hooks"
   ],
-  "required_execution_loop_terms": [
-    "smallest useful context",
-    "wave",
-    "diff review",
-    "verification",
-    "work log",
-    "local commit"
+  "required_task_sections": [
+    "## Current task",
+    "## Scope",
+    "## Verify",
+    "## Done when",
+    "## Blockers"
   ],
-  "required_quality_gate_terms": [
-    "diff review",
-    "checks",
-    "verification",
-    "work log",
-    "local commit"
-  ],
-  "required_legacy_policy_terms": [
-    "isolate",
-    "keep",
-    "deprecate",
-    "clean"
-  ],
-  "required_upstream_sync_terms": [
-    "translation task",
-    "mainline",
-    "do not mix"
-  ],
-  "required_harness_improvement_terms": [
-    "rule",
-    "check",
-    "skill"
+  "required_log_sections": [
+    "## Entry template",
+    "## Entries"
   ],
   "placeholder_token": "[TO_FILL]",
   "placeholder_docs": {
-    "docs/knowledge/current-state.md": [
+    "docs/project.md": [
       "## Purpose",
-      "## Current modules",
-      "## Known hotspots",
-      "## Stable behavior"
+      "## Current shape",
+      "## Constraints",
+      "## Key paths"
     ],
-    "docs/knowledge/desired-state.md": [
-      "## Desired outcomes",
-      "## Target shape",
-      "## Non-goals",
-      "## Open decisions"
-    ],
-    "docs/knowledge/work-scope.md": [
-      "## In scope",
-      "## Out of scope",
-      "## Waves",
-      "## Done definition"
-    ],
-    "docs/knowledge/operating-constraints.md": [
-      "## External constraints",
-      "## Compatibility promises",
-      "## Performance and reliability limits",
-      "## Human review checkpoints"
-    ],
-    "docs/knowledge/boundaries-and-interfaces.md": [
-      "## Layer boundaries",
+    "docs/architecture.md": [
+      "## Boundaries",
       "## Stable interfaces",
-      "## Ownership map",
-      "## Violation triggers"
+      "## Risk hotspots",
+      "## Rule hooks"
     ],
-    "docs/knowledge/risk-register.md": [
-      "## Known risks",
-      "## Risk owners",
-      "## Mitigations",
-      "## Escalation conditions"
-    ],
-    "docs/state/agent-state.md": [
-      "## Current objective",
-      "## Current wave",
-      "## Allowed files",
-      "## Validation status",
-      "## Open risks",
-      "## Compressed context"
-    ],
-    "docs/state/next-action.md": [
-      "## Single next action",
-      "## Inputs",
-      "## Stop condition",
-      "## Verification",
-      "## Handoff if blocked"
-    ],
-    "docs/plans/active-plan.md": [
-      "## Goal",
-      "## Current wave",
-      "## Queue",
-      "## Review cadence",
+    "docs/task.md": [
+      "## Current task",
+      "## Scope",
+      "## Verify",
+      "## Done when",
       "## Blockers"
     ],
-    "docs/plans/work-log.md": [
+    "docs/log.md": [
       "## Entry template"
-    ],
-    "docs/quality/working-rules.md": [
-      "## Stable rules",
-      "## Forbidden patterns",
-      "## Review triggers",
-      "## Promotion path to automation"
     ]
   },
   "required_architecture_rule_fields": [

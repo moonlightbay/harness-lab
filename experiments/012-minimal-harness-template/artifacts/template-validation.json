@@ -1,6 +1,6 @@
-﻿{
-  "generated_at": "2026-04-08T21:44:59.670966+08:00",
-  "template_root": "C:\\Users\\rewalk\\Desktop\\project\\harness-lab\\experiments\\012-minimal-harness-template\\template",
+{
+  "generated_at": "2026-04-10T16:16:22.167324+08:00",
+  "template_root": "/home/shenyu/\u6587\u6863/harness-lab/experiments/012-minimal-harness-template/template",
   "checks": [
     {
       "name": "required-files-exist",
@@ -10,12 +10,12 @@
     {
       "name": "top-level-pack-stays-small",
       "passed": true,
-      "detail": "Top-level word count: 287; budget: 320"
+      "detail": "Top-level word count: 183; budget: 220"
     },
     {
       "name": "required-top-level-paths-covered",
       "passed": true,
-      "detail": "Covered 6 of 6 required paths."
+      "detail": "Covered 5 of 5 required paths."
     },
     {
       "name": "no-stale-top-level-references",
@@ -33,49 +33,29 @@
       "detail": "Wrong authority topics: 0"
     },
     {
-      "name": "execution-plan-template-sections",
+      "name": "project-doc-ready",
       "passed": true,
       "detail": "Missing sections: none"
     },
     {
-      "name": "git-workflow-note-covers-worktrees",
+      "name": "architecture-doc-ready",
       "passed": true,
-      "detail": "Missing git terms: none"
+      "detail": "Missing sections: none"
     },
     {
-      "name": "execution-loop-covers-core-cycle",
+      "name": "task-doc-ready",
       "passed": true,
-      "detail": "Missing execution loop terms: none"
+      "detail": "Missing sections: none"
     },
     {
-      "name": "quality-gates-cover-closeout",
+      "name": "log-doc-ready",
       "passed": true,
-      "detail": "Missing quality gate terms: none"
-    },
-    {
-      "name": "legacy-code-policy-covers-classification",
-      "passed": true,
-      "detail": "Missing legacy policy terms: none"
-    },
-    {
-      "name": "upstream-sync-covers-translation",
-      "passed": true,
-      "detail": "Missing upstream sync terms: none"
-    },
-    {
-      "name": "harness-improvement-covers-rules-checks-skills",
-      "passed": true,
-      "detail": "Missing harness improvement terms: none"
+      "detail": "Missing sections: none"
     },
     {
       "name": "architecture-rule-hook-ready",
       "passed": true,
       "detail": "Valid rules: 1; invalid rules: 0"
-    },
-    {
-      "name": "placeholder-doc-sections",
-      "passed": true,
-      "detail": "Missing placeholder sections: none"
     },
     {
       "name": "placeholder-markers-exist",
@@ -84,12 +64,12 @@
     }
   ],
   "summary": {
-    "passed": 16,
-    "total": 16,
-    "top_level_word_count": 287,
+    "passed": 12,
+    "total": 12,
+    "top_level_word_count": 183,
     "guidance_verdict": "pass",
     "architecture_verdict": "pass",
-    "placeholder_doc_count": 11
+    "placeholder_doc_count": 4
   },
   "verdict": "pass"
 }

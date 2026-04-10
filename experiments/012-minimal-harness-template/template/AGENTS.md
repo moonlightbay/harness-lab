@@ -2,25 +2,21 @@
 
 ## Repository purpose
 
-This repository uses a small docs-first harness for long-running agent work across refactors, migrations, feature delivery, stabilization, and cleanup.
+This repository uses a lightweight docs-first harness for long-running agent work with Codex.
 
 ## Default read set
 
 - `README.md`
-- `docs/knowledge/repository-overview.md`
-- `docs/state/agent-state.md`
-- `docs/state/next-action.md`
-- `docs/plans/active-plan.md`
+- `docs/project.md`
+- `docs/task.md`
 
-Read deeper docs only when the task touches architecture boundaries, risky systems, upstream sync, or legacy cleanup.
+Read `docs/architecture.md` when touching structure or interfaces. Read `docs/log.md` for recent history.
 
 ## Expectations
 
 - Keep `AGENTS.md` short.
 - Keep top-level guidance current and singular.
-- Keep `docs/state/agent-state.md` compressed and current.
-- Keep `docs/state/next-action.md` limited to one queue item.
-- Work in waves with allowed files, stop conditions, verification, and rollback.
-- Close each wave with diff review, checks, verification, work-log update, and a local commit.
+- Keep `docs/task.md` limited to one current task.
+- Keep `docs/log.md` brief and append-only.
 - Encode at least one explicit architecture rule in `checks/architecture-rules.json`.
-- Turn recurring friction into a rule, check, or skill.
+- Keep long-lived repo facts in docs instead of chat-only context.

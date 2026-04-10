@@ -1,9 +1,9 @@
 {
   "verdict": "pass",
   "summary": {
-    "top_level_word_count": 289,
-    "required_paths_covered": 6,
-    "required_path_count": 6,
+    "top_level_word_count": 140,
+    "required_paths_covered": 3,
+    "required_path_count": 3,
     "stale_reference_count": 0,
     "wrong_authority_count": 0,
     "authority_conflict_count": 0
@@ -18,29 +18,14 @@
       "mention_count": 1
     },
     {
-      "path": "docs/knowledge/training-overview.md",
+      "path": "docs/project.md",
+      "mentioned_in_pack": true,
+      "mention_count": 2
+    },
+    {
+      "path": "docs/log.md",
       "mentioned_in_pack": true,
       "mention_count": 3
-    },
-    {
-      "path": "docs/state/agent-state.md",
-      "mentioned_in_pack": true,
-      "mention_count": 4
-    },
-    {
-      "path": "docs/state/next-action.md",
-      "mentioned_in_pack": true,
-      "mention_count": 4
-    },
-    {
-      "path": "docs/plans/active-plan.md",
-      "mentioned_in_pack": true,
-      "mention_count": 3
-    },
-    {
-      "path": "docs/plans/run-log.md",
-      "mentioned_in_pack": true,
-      "mention_count": 1
     }
   ]
 }

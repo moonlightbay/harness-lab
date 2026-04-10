@@ -1,56 +1,52 @@
-# Experiment 013 - Model Training Harness Template
+# Experiment 013 - Minimal Model Training Scaffold
 
-Last updated: 2026-04-09
+Last updated: 2026-04-10
 
 ## Goal
 
-Create a compact reusable harness template for model-training repositories that keeps long-running agent work controllable, cheap to resume, and easy to hand off across different model agents.
+Refine the training harness again so the repository keeps only training-specific durable context and structure guidance, without duplicating Codex's session-level harness.
 
 ## Hypothesis
 
-If the training template keeps only the shortest useful control surface, then one scaffold can support training code creation, tuning, debugging, reproduction, and reporting without turning into a training platform or a giant manual.
+If the scaffold keeps only project facts, repo-shape guidance, and a short work log, then it should stay useful for training work without repeating the task-tracking loop Codex already provides.
 
 ## Setup
 
 - Inspiration source: `https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7`
-- Base lab template: `../012-minimal-harness-template/template/`
+- Previous version: the 2026-04-09 training harness variant in this experiment
 - Template manifest: `manifest.json`
 - Template root: `template/`
 - Validator: `validate-template.py`
 
-The new template keeps these core surfaces:
+The refined scaffold keeps only these defaults:
 
-- stable training brief
-- compressed agent state
-- single next-action queue
-- wave-based execution plan
-- run log
-- training rules and quality gates
-- top-level guidance check
-- training-rule check
+- `docs/project.md`: stable project context, baseline, metrics, constraints, and repo shape
+- `docs/log.md`: brief append-only work record
+- `configs/`, `src/`, and `scripts/` guides for training repo structure
+- `checks/check-top-level-guidance.py` for top-level map health
 
-It intentionally does not include a runtime loop, a scheduler, GPU code, or slash commands. It is a repo harness, not an execution engine.
+It intentionally drops checked-in task tracking, plans, workflows, quality rules, and skills from the copied template so the starter stays focused on the parts Codex cannot carry across sessions by itself.
 
 ## Evaluation criteria
 
-- Pass if the template stays small and top-level guidance remains current and singular.
-- Pass if the validator confirms the required training docs, checks, and placeholders exist.
-- Strong pass if the template exposes a full training work loop with brief, wave, verification, run log, commit cadence, and upstream-sync handling while remaining concise.
+- Pass if the top-level pack stays short and points to one singular set of source-of-truth docs.
+- Pass if the validator confirms the two core docs and three structure guides are present and ready to fill.
+- Strong pass if the scaffold gives enough direction for agents to create a sane training layout without needing a long manual.
 
 ## Result
 
-Initial run on 2026-04-09: pass.
+Refinement run on 2026-04-10: pass.
 
 - validator verdict: `pass`
-- total checks passed: `13 / 13`
-- top-level pack words: `289`
+- total checks passed: `9 / 9`
+- top-level pack words: `140`
 - stale references: `0`
 - authority conflicts: `0`
 
 Interpretation:
 
-- The borrowed idea from `auto-deep-researcher-24x7` is not the runtime implementation. It is the control shape: stable brief, rolling state, explicit next step, and low-cost recurring loop.
-- The template stays docs-first and model-agnostic, so any capable agent can pick it up without depending on one vendor runtime.
-- The training-specific additions are narrow: experiment brief, evaluation protocol, compute-and-ops note, run log, and training rules.
+- The most reusable part of the training template is the durable project brief plus the directory contract, not the checked-in task loop.
+- Removing `docs/task.md` avoids mirroring Codex's own plan and next-step management.
+- Keeping `configs/README.md`, `src/README.md`, and `scripts/README.md` preserves the part that actually helps an agent shape a good training repository.
 
-See `artifacts/template-guidance-check.json`, `artifacts/template-training-rules-check.json`, `artifacts/template-validation.json`, and `artifacts/run-2026-04-09.md`.
+See `artifacts/template-guidance-check.json`, `artifacts/template-validation.json`, and `artifacts/run-2026-04-10.md`.

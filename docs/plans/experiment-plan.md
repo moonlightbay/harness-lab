@@ -1,6 +1,6 @@
 # Harness-Lab Experiment Plan
 
-Last updated: 2026-04-09
+Last updated: 2026-04-10
 Status: active
 
 ## Goal
@@ -241,10 +241,10 @@ Status note:
 - Experiment 001, Experiment 002, Experiment 003, Experiment 004, Experiment 005, Experiment 006, Experiment 007, Experiment 008, Experiment 009, Experiment 010, Experiment 011, and Experiment 012 were completed on 2026-04-06.
 - Layer B now has evidence for both oversized-manual failure and stale-or-duplicate guidance failure.
 - Layer G now has a lightweight recurring scoreboard that ranks patterns by outcome gain, steering gain, reproducibility, and cost.
-- Experiment 012 was refined again on 2026-04-08 after two days of use in another project.
-- Experiment 013 was completed on 2026-04-09 and produced a compact training-specific harness template inspired by `auto-deep-researcher-24x7`.
-- A generic reusable harness template now exists with state compression, next-action control, wave execution, quality gates, cadence review, upstream sync handling, and harness-improvement hooks.
-- A compact model-training variant now exists with a stable brief, evaluation protocol, compute note, run log, and training-rule hook.
+- Experiment 012 was refined again on 2026-04-08 after two days of use in another project, then simplified on 2026-04-10 to better complement Codex's built-in harness.
+- Experiment 013 was completed on 2026-04-09 and then refined twice on 2026-04-10 into a minimal training-specific scaffold inspired by `auto-deep-researcher-24x7`.
+- A lightweight generic harness template now exists with four durable docs (`project`, `architecture`, `task`, `log`) plus an architecture-rule hook.
+- A minimal model-training scaffold now exists with durable project context, a short work log, and explicit `configs/`, `src/`, and `scripts/` structure guides.
 - The next useful step is a cross-agent template pilot that checks whether the same scaffold stays effective across different model agents or agent styles.
 
 ### Sprint 1 tasks

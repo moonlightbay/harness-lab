@@ -186,6 +186,18 @@ Use this file to record outcomes as the lab progresses.
 - What to change next: run the same template with a second model or agent style and compare handoff quality, token cost, and drift.
 - Reusable lesson for future host repos: keep the template generic in naming, but explicit in control surfaces. A reusable harness should tell any agent where it is, what comes next, how to stop, how to verify, and how to turn repeated friction into reusable automation.
 
+### 2026-04-10 - Experiment 012 refinement: lightweight generic harness template
+
+- Layer: synthesis after A-H
+- Hypothesis: Once Codex already provides session-level planning and execution flow, the checked-in generic harness can shrink further and keep only durable repository facts plus one structural rule hook.
+- Setup: Refactored `experiments/012-minimal-harness-template/template/` to remove explicit state, next-action, plans, workflow notes, quality-gate docs, and skills. Replaced them with `docs/project.md`, `docs/architecture.md`, `docs/task.md`, and `docs/log.md`, while keeping `checks/check-top-level-guidance.py`, `checks/check-architecture.py`, and `checks/architecture-rules.json`.
+- Commands or workflow: rewrote the template, reran `checks/check-top-level-guidance.py`, reran `checks/check-architecture.py`, reran `validate-template.py`, and refreshed the validation artifacts.
+- Result: pass. The refined scaffold passed 12 / 12 checks, reduced the top-level pack from 287 words to 183 words, and kept zero stale references and zero authority conflicts.
+- What worked: the template still preserves durable repo context and structural taste, but it no longer duplicates Codex-managed session mechanics. The four-doc surface is faster to scan and easier to keep current.
+- What failed: this lighter template intentionally removes explicit checked-in planning and workflow guidance, so teams doing very long or highly regulated work may still want to layer some of those docs back in.
+- What to change next: pilot the lighter generic scaffold in a real repo and compare whether Codex still resumes cleanly with less checked-in process overhead.
+- Reusable lesson for future host repos: once the agent runtime is good enough, the repository harness should stop mirroring the whole loop. Keep only the facts that need to survive beyond a single session.
+
 ### 2026-04-09 - Experiment 013: model training harness template
 
 - Layer: synthesis after A-H, applied to the training domain
@@ -197,3 +209,27 @@ Use this file to record outcomes as the lab progresses.
 - What failed: the template does not attempt to encode runtime orchestration, GPU monitoring, or experiment scheduling. That is intentional, but any project wanting full 24/7 autonomy will still need a separate runtime layer.
 - What to change next: test the training template in a fresh training repo with a different model agent, then decide whether any additional rule hooks or log schemas should move into the default scaffold.
 - Reusable lesson for future host repos: when adapting a harness pattern from a concrete agent system, copy the control surfaces, not the whole runtime. For training work, the most transferable pieces are the stable brief, compressed state, explicit next action, wave plan, run log, and a hard closeout gate.
+
+### 2026-04-10 - Experiment 013 refinement: lightweight training scaffold
+
+- Layer: synthesis after A-H, applied to the training domain
+- Hypothesis: The same training harness becomes easier for agents to use if the default read path is cut down to three working docs and the rest of the guidance is moved into a simple repository structure contract.
+- Setup: Refactored `experiments/013-model-training-harness-template/template/` to remove separate plan, workflow, quality-rule, and skill layers. Replaced them with `docs/project.md`, `docs/task.md`, `docs/log.md`, plus small structure guides in `configs/README.md`, `src/README.md`, and `scripts/README.md`. Simplified `manifest.json` and `validate-template.py` to match.
+- Commands or workflow: rewrote the template, reran `checks/check-top-level-guidance.py`, reran `validate-template.py`, and refreshed the validation artifacts.
+- Result: pass. The refined scaffold passed 10 / 10 checks, reduced the top-level pack from 289 words to 188 words, and kept zero stale references and zero authority conflicts.
+- What worked: merging plan and current-state control into `docs/task.md` kept the minimum execution discipline while removing document hopping. The new directory guides made the template more useful for shaping an actual training repo instead of only carrying process docs.
+- What failed: the lighter scaffold intentionally gives up some long-horizon control surfaces such as explicit wave planning and training-rule hooks. Teams that need higher autonomy or stricter governance will still need to layer those back in.
+- What to change next: pilot the lighter scaffold in a real training repo and compare whether agents stay on-structure with less steering than the heavier 2026-04-09 version.
+- Reusable lesson for future host repos: for many training repositories, the best starter is not the smallest possible prompt and not the richest possible harness. A three-doc working surface plus a clear directory contract may be the practical default.
+
+### 2026-04-10 - Experiment 013 refinement: minimal training scaffold
+
+- Layer: synthesis after A-H, applied to the training domain
+- Hypothesis: Once Codex already handles session-level planning and next-step control, a training scaffold can shrink again and keep only durable project context, structure guidance, and a short checked-in work log.
+- Setup: Refactored `experiments/013-model-training-harness-template/template/` a second time on the same day. Removed `docs/task.md`, tightened `AGENTS.md` and `README.md`, kept `docs/project.md` and `docs/log.md`, and preserved the `configs/README.md`, `src/README.md`, and `scripts/README.md` structure guides. Simplified `manifest.json` and `validate-template.py` again to match.
+- Commands or workflow: rewrote the template, reran `checks/check-top-level-guidance.py`, reran `validate-template.py`, and refreshed the validation artifacts.
+- Result: pass. The refined scaffold passed 9 / 9 checks, reduced the top-level pack from 188 words to 140 words, and kept zero stale references and zero authority conflicts.
+- What worked: the repo now keeps only the information Codex cannot safely carry across sessions by itself. The project brief still anchors metrics, baselines, and structure, while the short log keeps a lightweight durable record.
+- What failed: removing `docs/task.md` means the scaffold no longer offers a checked-in current-task surface for teams that explicitly want one in git. Those teams will need to add it back intentionally.
+- What to change next: pilot the minimal scaffold in a real training repo and compare whether resume quality stays acceptable with only `project` plus `log` as the checked-in docs.
+- Reusable lesson for future host repos: when the runtime harness is strong, the repo harness should focus on stable facts and reusable structure, not on replaying the agent's live working memory.

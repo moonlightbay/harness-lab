@@ -83,90 +83,42 @@ def main() -> None:
         f"Wrong authority topics: {guidance_result['summary']['wrong_authority_count']}",
     )
 
-    plan_text = (TEMPLATE_ROOT / "docs/plans/execution-plan-template.md").read_text(encoding="utf-8")
-    missing_sections = [section for section in MANIFEST["required_plan_sections"] if section not in plan_text]
+    project_text = (TEMPLATE_ROOT / "docs/project.md").read_text(encoding="utf-8")
+    missing_project_sections = [section for section in MANIFEST["required_project_sections"] if section not in project_text]
     add_check(
-        "execution-plan-template-sections",
-        not missing_sections,
-        "Missing sections: none" if not missing_sections else f"Missing sections: {missing_sections}",
+        "project-doc-ready",
+        not missing_project_sections,
+        "Missing sections: none" if not missing_project_sections else f"Missing sections: {missing_project_sections}",
     )
 
-    git_text = (TEMPLATE_ROOT / "docs/workflows/git-workflow.md").read_text(encoding="utf-8").lower()
-    missing_git_terms = [term for term in MANIFEST["required_git_terms"] if term.lower() not in git_text]
-    add_check(
-        "git-workflow-note-covers-worktrees",
-        not missing_git_terms,
-        "Missing git terms: none" if not missing_git_terms else f"Missing git terms: {missing_git_terms}",
-    )
-
-    execution_loop_text = read_lower("docs/workflows/execution-loop.md")
-    missing_execution_loop_terms = [
-        term for term in MANIFEST["required_execution_loop_terms"] if term.lower() not in execution_loop_text
+    architecture_text = (TEMPLATE_ROOT / "docs/architecture.md").read_text(encoding="utf-8")
+    missing_architecture_sections = [
+        section for section in MANIFEST["required_architecture_sections"] if section not in architecture_text
     ]
     add_check(
-        "execution-loop-covers-core-cycle",
-        not missing_execution_loop_terms,
+        "architecture-doc-ready",
+        not missing_architecture_sections,
         (
-            "Missing execution loop terms: none"
-            if not missing_execution_loop_terms
-            else f"Missing execution loop terms: {missing_execution_loop_terms}"
+            "Missing sections: none"
+            if not missing_architecture_sections
+            else f"Missing sections: {missing_architecture_sections}"
         ),
     )
 
-    quality_gate_text = read_lower("docs/quality/quality-gates.md")
-    missing_quality_gate_terms = [
-        term for term in MANIFEST["required_quality_gate_terms"] if term.lower() not in quality_gate_text
-    ]
+    task_text = (TEMPLATE_ROOT / "docs/task.md").read_text(encoding="utf-8")
+    missing_task_sections = [section for section in MANIFEST["required_task_sections"] if section not in task_text]
     add_check(
-        "quality-gates-cover-closeout",
-        not missing_quality_gate_terms,
-        (
-            "Missing quality gate terms: none"
-            if not missing_quality_gate_terms
-            else f"Missing quality gate terms: {missing_quality_gate_terms}"
-        ),
+        "task-doc-ready",
+        not missing_task_sections,
+        "Missing sections: none" if not missing_task_sections else f"Missing sections: {missing_task_sections}",
     )
 
-    legacy_policy_text = read_lower("docs/quality/legacy-code-policy.md")
-    missing_legacy_terms = [
-        term for term in MANIFEST["required_legacy_policy_terms"] if term.lower() not in legacy_policy_text
-    ]
+    log_text = (TEMPLATE_ROOT / "docs/log.md").read_text(encoding="utf-8")
+    missing_log_sections = [section for section in MANIFEST["required_log_sections"] if section not in log_text]
     add_check(
-        "legacy-code-policy-covers-classification",
-        not missing_legacy_terms,
-        (
-            "Missing legacy policy terms: none"
-            if not missing_legacy_terms
-            else f"Missing legacy policy terms: {missing_legacy_terms}"
-        ),
-    )
-
-    upstream_sync_text = read_lower("docs/workflows/upstream-sync.md")
-    missing_upstream_terms = [
-        term for term in MANIFEST["required_upstream_sync_terms"] if term.lower() not in upstream_sync_text
-    ]
-    add_check(
-        "upstream-sync-covers-translation",
-        not missing_upstream_terms,
-        (
-            "Missing upstream sync terms: none"
-            if not missing_upstream_terms
-            else f"Missing upstream sync terms: {missing_upstream_terms}"
-        ),
-    )
-
-    harness_improvement_text = read_lower("docs/workflows/harness-improvement.md")
-    missing_improvement_terms = [
-        term for term in MANIFEST["required_harness_improvement_terms"] if term.lower() not in harness_improvement_text
-    ]
-    add_check(
-        "harness-improvement-covers-rules-checks-skills",
-        not missing_improvement_terms,
-        (
-            "Missing harness improvement terms: none"
-            if not missing_improvement_terms
-            else f"Missing harness improvement terms: {missing_improvement_terms}"
-        ),
+        "log-doc-ready",
+        not missing_log_sections,
+        "Missing sections: none" if not missing_log_sections else f"Missing sections: {missing_log_sections}",
     )
 
     architecture_result = run_json_command([sys.executable, "checks/check-architecture.py", "."])
@@ -181,26 +133,13 @@ def main() -> None:
 
     placeholder_token = MANIFEST["placeholder_token"]
     placeholder_docs = MANIFEST["placeholder_docs"]
-    missing_placeholder_sections = {}
     docs_without_placeholder_token = []
 
     for relative_path, required_sections in placeholder_docs.items():
         text = (TEMPLATE_ROOT / relative_path).read_text(encoding="utf-8")
-        missing_sections = [section for section in required_sections if section not in text]
-        if missing_sections:
-            missing_placeholder_sections[relative_path] = missing_sections
         if placeholder_token not in text:
             docs_without_placeholder_token.append(relative_path)
 
-    add_check(
-        "placeholder-doc-sections",
-        not missing_placeholder_sections,
-        (
-            "Missing placeholder sections: none"
-            if not missing_placeholder_sections
-            else f"Missing placeholder sections: {missing_placeholder_sections}"
-        ),
-    )
     add_check(
         "placeholder-markers-exist",
         not docs_without_placeholder_token,

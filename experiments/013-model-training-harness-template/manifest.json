@@ -1,145 +1,75 @@
 {
-  "template_name": "model-training-harness-template",
+  "template_name": "minimal-model-training-scaffold",
   "inspiration": {
     "project": "auto-deep-researcher-24x7",
     "url": "https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7",
     "borrowed_ideas": [
-      "stable brief plus rolling state",
-      "think-execute-reflect style loop",
-      "cheap monitoring mindset",
-      "human override and direction control"
+      "stable project brief",
+      "short rolling task sheet",
+      "cheap recurring loop",
+      "human-readable run record"
     ]
   },
   "required_files": [
     ".gitignore",
     "AGENTS.md",
     "README.md",
-    "docs/knowledge/training-overview.md",
-    "docs/knowledge/experiment-brief.md",
-    "docs/knowledge/evaluation-protocol.md",
-    "docs/knowledge/compute-and-ops.md",
-    "docs/state/agent-state.md",
-    "docs/state/next-action.md",
-    "docs/plans/active-plan.md",
-    "docs/plans/execution-plan-template.md",
-    "docs/plans/run-log.md",
-    "docs/quality/quality-gates.md",
-    "docs/quality/training-rules.md",
-    "docs/workflows/training-loop.md",
-    "docs/workflows/git-and-sync.md",
-    "checks/check-top-level-guidance.py",
-    "checks/check-training-rules.py",
-    "checks/training-rules.json",
-    "skills/README.md"
+    "docs/project.md",
+    "docs/log.md",
+    "configs/README.md",
+    "src/README.md",
+    "scripts/README.md",
+    "checks/check-top-level-guidance.py"
   ],
   "required_top_level_paths": [
     "README.md",
-    "docs/knowledge/training-overview.md",
-    "docs/state/agent-state.md",
-    "docs/state/next-action.md",
-    "docs/plans/active-plan.md",
-    "docs/plans/run-log.md"
+    "docs/project.md",
+    "docs/log.md"
   ],
   "top_level_pack_files": [
     "AGENTS.md",
     "README.md"
   ],
-  "top_level_word_budget": 300,
-  "required_plan_sections": [
+  "top_level_word_budget": 200,
+  "required_project_sections": [
     "## Goal",
-    "## Wave",
-    "## Scope",
     "## Baseline",
+    "## Data and metrics",
     "## Constraints",
-    "## Allowed files",
-    "## Stop conditions",
-    "## Plan",
-    "## Verification",
-    "## Rollback",
-    "## Risks",
-    "## Handoff"
+    "## Repo structure"
   ],
-  "required_git_terms": [
-    "branch-per-task",
-    "worktree",
-    "5 commits",
-    "translation task"
+  "required_log_sections": [
+    "## Entry template",
+    "## Entries"
   ],
-  "required_training_loop_terms": [
-    "smallest useful context",
-    "brief",
-    "next action",
-    "wave",
-    "diff review",
-    "dry-run",
-    "verification",
-    "run log",
-    "local commit"
+  "required_config_terms": [
+    "base",
+    "experiments",
+    "debug"
   ],
-  "required_quality_gate_terms": [
-    "diff review",
-    "checks",
-    "dry-run",
-    "verification",
-    "run log",
-    "local commit"
+  "required_src_terms": [
+    "data",
+    "models",
+    "train",
+    "eval"
+  ],
+  "required_script_terms": [
+    "prepare",
+    "train",
+    "evaluate",
+    "smoke"
   ],
   "placeholder_token": "[TO_FILL]",
   "placeholder_docs": {
-    "docs/knowledge/training-overview.md": [
-      "## Objective",
-      "## Current assets",
-      "## Boundaries",
-      "## Risks"
-    ],
-    "docs/knowledge/experiment-brief.md": [
+    "docs/project.md": [
       "## Goal",
       "## Baseline",
-      "## Search space",
-      "## Hard constraints"
+      "## Data and metrics",
+      "## Constraints",
+      "## Repo structure"
     ],
-    "docs/knowledge/evaluation-protocol.md": [
-      "## Metrics",
-      "## Datasets and splits",
-      "## Acceptance rules",
-      "## Reproduction rules"
-    ],
-    "docs/knowledge/compute-and-ops.md": [
-      "## Hardware and budget",
-      "## Runtime limits",
-      "## Artifact retention",
-      "## Upstream dependencies"
-    ],
-    "docs/state/agent-state.md": [
-      "## Current objective",
-      "## Current wave",
-      "## Allowed files",
-      "## Validation status",
-      "## Compressed context"
-    ],
-    "docs/state/next-action.md": [
-      "## Single next action",
-      "## Inputs",
-      "## Stop condition",
-      "## Verification",
-      "## Handoff if blocked"
-    ],
-    "docs/plans/active-plan.md": [
-      "## Goal",
-      "## Current wave",
-      "## Queue",
-      "## Review cadence",
-      "## Blockers"
-    ],
-    "docs/plans/run-log.md": [
+    "docs/log.md": [
       "## Entry template"
     ]
-  },
-  "required_training_rule_fields": [
-    "id",
-    "description",
-    "detection_hint",
-    "remediation_hint",
-    "rerun_hint"
-  ]
+  }
 }

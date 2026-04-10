@@ -1,13 +1,12 @@
 # Experiment 012 Rubric
 
-The template is validated as a generic harness scaffold, not a migration-only starter.
+The template is validated as a lightweight generic harness scaffold that assumes Codex already carries part of the live work loop.
 
 ## 1. Structural presence
 
 - required files exist
-- execution plan template contains the required sections
+- durable docs for project, architecture, current task, and log are all present
 - architecture rule hook exists and has at least one sample rule
-- state, plan, quality, workflow, and skill layers are all present
 
 ## 2. Top-level legibility
 
@@ -16,17 +15,16 @@ The template is validated as a generic harness scaffold, not a migration-only st
 - no stale markdown path references appear in the top-level pack
 - no duplicate or conflicting source-of-truth claims appear in the top-level pack
 
-## 3. Workflow coverage
+## 3. Minimal durable context
 
-- the execution loop covers minimal-context reading, wave execution, diff review, verification, logging, and local commit closeout
-- the Git workflow covers branch-per-task worktrees and a five-commit review cadence
-- the upstream sync note frames mainline changes as translation work
-- the harness-improvement note explains how repeated friction becomes a rule, check, or skill
-- the legacy code policy classifies messy code before deletion
+- `docs/project.md` captures repo purpose, shape, constraints, and key paths
+- `docs/architecture.md` captures boundaries, stable interfaces, hotspots, and rule hooks
+- `docs/task.md` carries one current task plus verification and blockers
+- `docs/log.md` stays brief and append-only
 
 ## 4. Placeholder discipline
 
-- the long-lived context docs contain `[TO_FILL]` markers and the expected sections
+- the checked-in docs contain `[TO_FILL]` markers and the expected sections
 - the template makes it obvious which human-supplied context must be filled before large work begins
 
 ## 5. Outcome
